@@ -3,11 +3,11 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: 博客
-subtitle: ''
-description: ''
+title: cheel blog
+subtitle: 'lazy man'
+description: '记录代码和阅读心得'
 keywords:
-author: John Doe
+author: cheel
 language: zh-CN
 timezone: Asia/Shanghai
 # URL
@@ -24,7 +24,7 @@ source_dir: source
 public_dir: public
 tag_dir: tags
 archive_dir: archives
-category_dir: categories
+category_dir: source/categories
 code_dir: downloads/code
 i18n_dir: :lang
 skip_render:
@@ -103,3 +103,8 @@ deploy:
   type: 'git'
   repo: git@github.com:cheel98/blog.git
   branch: main
+# 关闭hexo默认的分类生成
+category_generator:
+  enable_index_page: false
+tag_generator:
+  enable_index_page: false
