@@ -1,8 +1,12 @@
 ---
 title: 欢迎体验我的博客
+tags:
+  - 博客
+  - 欢迎
+categories:
+  - 生活
+abbrlink: cf92dd80
 date: 2025-05-22 11:18:58
-tags: [博客, 欢迎]
-categories: [生活]
 ---
 ## 欢迎来到我的博客！
 
