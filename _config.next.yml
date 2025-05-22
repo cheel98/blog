@@ -938,7 +938,7 @@ giscus:
   repo_id: R_kgDOOuTMFw
   category: Announcements
   category_id: DIC_kwDOOuTMF84CqcST
-  mapping: url
+  mapping: pathname
   strict: 1
   reactions_enabled: 1
   input_position: bottom
