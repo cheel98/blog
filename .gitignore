@@ -3,4 +3,5 @@ node_modules/
 .deploy_git/
 public/
 package-lock.json
+db.json
 
