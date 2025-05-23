@@ -1,5 +1,10 @@
-https://cheel.github.io/blog/2025/05/22/welcome/
-https://cheel.github.io/blog/2025/05/22/hello-world/
+https://cheel.github.io/blog/google6ba91f5e237e6f25.html
+https://cheel.github.io/blog/posts/cf92dd80/
+https://cheel.github.io/blog/404.html
+https://cheel.github.io/blog/tags/index.html
+https://cheel.github.io/blog/categories/index.html
+https://cheel.github.io/blog/about/index.html
+https://cheel.github.io/blog/guestbook/index.html
 https://cheel.github.io/blog
 https://cheel.github.io/blog/tags/%E5%8D%9A%E5%AE%A2/
 https://cheel.github.io/blog/tags/%E6%AC%A2%E8%BF%8E/
