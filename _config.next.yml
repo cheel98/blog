@@ -19,7 +19,8 @@ minify: false
 # Define custom file paths.
 # Create your custom files in site directory `source/_data` and uncomment needed files below.
 custom_file_path:
-#head: source/_data/head.njk
+#  head: source/_data/head-start.njk
+#  head: source/_data/head.njk
 #header: source/_data/header.njk
 #sidebar: source/_data/sidebar.njk
 #postMeta: source/_data/post-meta.njk
@@ -100,10 +101,11 @@ menu:
   tags: /tags/ || fa fa-tags
   categories: /categories/ || fa fa-th
   archives: /archives/ || fa fa-archive
-  留言: /guestbook/ || fa fa-comments
+  docs: /docs/ || fa fa-docs
+  comments: /guestbook/ || fa fa-comments
 #schedule: /schedule/ || fa fa-calendar
 #sitemap: /sitemap.xml || fa fa-sitemap
-  commonweal: /404.html || fa fa-heartbeat
+#  commonweal: /404.html || fa fa-heartbeat
 
 # Enable / Disable menu icons / item badges.
 menu_settings:
@@ -143,11 +145,11 @@ sidebar:
 # Sidebar Avatar
 avatar:
   # Replace the default image and set the url here.
-  url: https://avatars.githubusercontent.com/u/52066949?v=4&size=64
+  url: https://avatars.githubusercontent.com/u/52066949
   # If true, the avatar will be displayed in circle.
   rounded: true
   # If true, the avatar will be rotated with the cursor.
-  rotated: true
+  rotated: false
 
 # Posts / Categories / Tags in sidebar.
 site_state: true
@@ -157,8 +159,8 @@ site_state: true
 # Key is the link label showing to end users.
 # Value before `||` delimiter is the target permalink, value after `||` delimiter is the name of Font Awesome icon.
 social:
-GitHub: https://github.com/cheel98 || fab fa-github
-#E-Mail: mailto:yourname@gmail.com || fa fa-envelope
+  GitHub: https://github.com/cheel98 || fab fa-github
+  E-Mail: mailto:ql592918942@gmail.com || fa fa-envelope
 #Weibo: https://weibo.com/yourname || fab fa-weibo
 #Twitter: https://twitter.com/yourname || fab fa-twitter
 #FB Page: https://www.facebook.com/yourname || fab fa-facebook
@@ -261,7 +263,7 @@ post_meta:
 # Dependencies: https://github.com/next-theme/hexo-word-counter
 symbols_count_time:
   separated_meta: true
-  item_text_total: false
+  item_text_total: true
 
 # Use icon instead of the symbol # to indicate the tag at the bottom of the post
 tag_icon: false
@@ -286,6 +288,7 @@ follow_me:
 #Telegram: https://t.me/channel_name || fab fa-telegram
 #WeChat: /images/wechat_channel.png || fab fa-weixin
 #RSS: /atom.xml || fa fa-rss
+#  Github: https://github.com/cheel98 || fab fa-github
 
 # Related popular posts
 # Dependencies: https://github.com/sergeyzwezdin/hexo-related-posts
@@ -474,7 +477,7 @@ seo: true
 
 # If true, site-subtitle will be added to the title of index page.
 # Remember to set up your site-subtitle in Hexo `_config.yml` (e.g. subtitle: Subtitle)
-index_with_subtitle: false
+index_with_subtitle: true
 
 # Automatically add external URL with Base64 encrypt & decrypt.
 exturl: false
@@ -483,8 +486,7 @@ exturl_icon: true
 
 # Google Webmaster tools verification.
 # See: https://developers.google.com/search
-google_site_verification:
-
+google_site_verification: NAV7HfLL9iE2IbVvwRZIcU7VN25nxWUWFr0q3ArSB5Y
 # Bing Webmaster tools verification.
 # See: https://www.bing.com/webmasters
 bing_site_verification:
@@ -883,16 +885,16 @@ local_search:
 # A button to open designated chat widget in sidebar.
 # Firstly, you need to enable and configure the chat service.
 chat:
-  enable: false
-  icon: fa fa-comment # Icon name in Font Awesome, set to `false` to disable icon.
+  enable: true
+  icon: fa fa-chat # Icon name in Font Awesome, set to `false` to disable icon.
 
 # Chatra is a functional, easy to use piece of chat software for websites.
 # For more information: https://chatra.com
 # Dashboard: https://app.chatra.io/settings/general
 chatra:
-  enable: false
+  enable: true
   async: true
-  id: # Visit Dashboard to get your ChatraID
+  id: decjvSkt4ik7CFQ3g
   #embed: # Unfinished experimental feature for developers. See: https://chatra.com/help/api/#injectto
 
 # Tidio is a powerful, all-in-one customer service tool.
@@ -970,3 +972,5 @@ post_wordcount:
   min2read: true          # 单篇 阅读时长
   totalcount: false       # 网站 字数统计
   separated_meta: true
+
+

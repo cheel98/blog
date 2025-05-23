@@ -1,0 +1,9 @@
+# language
+zh-CN:
+  # items
+  menu:
+    comments: 留言
+    docs: 文档
+en:
+  menu:
+    schedule: Calendar

@@ -119,3 +119,25 @@ tag_generator:
   enable_index_page: false
   per_page: 10
   order_by: -date
+
+symbols_count_time:
+  time: true
+  total_symbols: true
+  total_time: true
+  awl: 4
+  wpm: 300
+
+sitemap:
+  path: sitemap.xml
+
+# Robots
+robots:
+  useragent: '*'
+  allow:
+    - /
+  disallow:
+    - /archives/
+    - /tags/
+    - /categories/
+  sitemap:
+    - /sitemap.xml
