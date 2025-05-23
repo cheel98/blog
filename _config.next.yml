@@ -101,8 +101,8 @@ menu:
   tags: /tags/ || fa fa-tags
   categories: /categories/ || fa fa-th
   archives: /archives/ || fa fa-archive
-  docs: /docs/ || fa fa-document
-  comments: /guestbook/ || fa fa-book
+  docs: /docs/ || fa fa-book
+  comments: /guestbook/ || fa fa-comments
 #schedule: /schedule/ || fa fa-calendar
 #sitemap: /sitemap.xml || fa fa-sitemap
 #  commonweal: /404.html || fa fa-heartbeat
