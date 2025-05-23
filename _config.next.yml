@@ -101,8 +101,8 @@ menu:
   tags: /tags/ || fa fa-tags
   categories: /categories/ || fa fa-th
   archives: /archives/ || fa fa-archive
-  docs: /docs/ || fa fa-docs
-  comments: /guestbook/ || fa fa-comments
+  docs: /docs/ || fa fa-document
+  comments: /guestbook/ || fa fa-book
 #schedule: /schedule/ || fa fa-calendar
 #sitemap: /sitemap.xml || fa fa-sitemap
 #  commonweal: /404.html || fa fa-heartbeat
@@ -885,7 +885,7 @@ local_search:
 # A button to open designated chat widget in sidebar.
 # Firstly, you need to enable and configure the chat service.
 chat:
-  enable: true
+  enable: false
   icon: fa fa-chat # Icon name in Font Awesome, set to `false` to disable icon.
 
 # Chatra is a functional, easy to use piece of chat software for websites.
