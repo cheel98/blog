@@ -3,9 +3,9 @@
   <entry>
     <title>欢迎体验我的博客</title>
     <url>/blog/posts/cf92dd80/</url>
-    <content><![CDATA[
+    <content><![CDATA[欢迎来到我的博客！这是我的第一篇文章，感谢使用Hexo搭建的个人博客。未来我会分享更多关于技术、生活和思考的内容。
 
-欢迎来到我的博客！这是我的第一篇文章，感谢使用Hexo搭建的个人博客。未来我会分享更多关于技术、生活和思考的内容。
+
 为什么建博客？
 记录学习历程
 分享技术经验
@@ -19,6 +19,42 @@
       <tags>
         <tag>博客</tag>
         <tag>欢迎</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>常见的排序算法golang实现</title>
+    <url>/blog/posts/a5f1835d/</url>
+    <content><![CDATA[
+
+快读排序特点: 1. 原地排序 2. 不稳定
+步骤: 
+step1: 找到一个基准数，将大于它的数放在右边, 小于它的数放在左边
+step2: 对左右两个数组执行step1, 指导数组元素小于等于1
+func QuickSort(nums []int) &#123;    n := len(nums)    if n &lt; 2 &#123;        return    &#125;    pivot := 0    nums[pivot], nums[0] = nums[0], nums[pivot]    l, r := 0, n-1    for l &lt; r &#123;        for r &gt; l &amp;&amp; nums[r] &gt;= nums[l] &#123;            r--        &#125;        for l &lt; r &amp;&amp; nums[l] &lt;= nums[0] &#123;            l++        &#125;        nums[l], nums[r] = nums[r], nums[l]    &#125;    nums[0], nums[l] = nums[l], nums[0]    QuickSort(nums[:l])    QuickSort(nums[l+1:])&#125;
+
+归并排序特点: 1. 需要辅助数组 2. 稳定排序
+步骤：
+
+分解：
+
+找到数组中心位置，从中心位置分解为左右两个数组
+对左右两个数组递归分解，直到分解为n个长度为1的数组
+
+
+合并:
+
+从长度为1的数组开始依次合并，合并时比较左右元素的大小使合并后的数组保持有序
+
+
+
+func MergeSort(nums []int) []int &#123;	n := len(nums)	if n &lt; 2 &#123;		return nums	&#125;	pivot := n / 2	left := MergeSort(nums[:pivot])	right := MergeSort(nums[pivot:])	ans := Merge(left, right)	return ans&#125;func Merge(left, right []int) []int &#123;	n1, n2 := len(left), len(right)	ans := make([]int, n1+n2)	i, l, r := 0, 0, 0	for l &lt; n1 &amp;&amp; r &lt; n2 &#123;		if left[l] &lt;= right[r] &#123;			ans[i] = left[l]			l++		&#125; else &#123;			ans[i] = right[r]			r++		&#125;		i++	&#125;	for l &lt; n1 &#123;		ans[i] = left[l]		l++		i++	&#125;	for r &lt; n2 &#123;		ans[i] = right[r]		r++		i++	&#125;	return ans&#125;]]></content>
+      <categories>
+        <category>算法</category>
+      </categories>
+      <tags>
+        <tag>算法</tag>
+        <tag>排序</tag>
+        <tag>数组</tag>
       </tags>
   </entry>
 </search>
