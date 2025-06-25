@@ -103,6 +103,7 @@ menu:
   archives: /archives/ || fa fa-archive
   docs: /docs/ || fa fa-book
   comments: /guestbook/ || fa fa-comments
+  minigame: /minigame/ || fa fa-gamepad
 #schedule: /schedule/ || fa fa-calendar
 #sitemap: /sitemap.xml || fa fa-sitemap
 #  commonweal: /404.html || fa fa-heartbeat

@@ -1,4 +1,16 @@
-# 常见的排序算法golang实现
+---
+title: 常见的排序算法golang实现
+description: 整理一下常用的排序算法
+tags:
+  - 算法
+  - 排序
+  - 数组
+categories:
+  - 算法
+date: '2025年5月28日09:07:33'
+abbrlink: a5f1835d
+---
+<!-- more -->
 
 ## 快读排序
 
