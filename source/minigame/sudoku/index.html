@@ -321,7 +321,7 @@
                     cell.classList.remove('cell-error');
                     puzzle[row][col] = number;
                 } else {
-                    cell.classList.add('cell-error');
+                    // cell.classList.add('cell-error');
                 }
                 
                 // 检查游戏是否完成
@@ -485,6 +485,7 @@
                         
                         if (puzzle[i][j] !== 0) {
                             cell.textContent = puzzle[i][j];
+                            cell.classList.remove('text-primary');
                             cell.classList.add('text-gray-800');
                         } else {
                             cell.textContent = '';
@@ -560,18 +561,24 @@
             // 显示提示
             function showHint() {
                 if (!gameStarted) return;
-                
-                // 找到一个空单元格
                 let emptyCells = [];
-                for (let i = 0; i < 9; i++) {
-                    for (let j = 0; j < 9; j++) {
-                        if (puzzle[i][j] === 0) {
-                            emptyCells.push({ row: i, col: j });
+                // 找到一个空单元格
+                if (selectedCell) {
+                    emptyCells = [{row: selectedCell.dataset.row,col: selectedCell.dataset.col}]
+                }else{
+                    for (let i = 0; i < 9; i++) {
+                        for (let j = 0; j < 9; j++) {
+                            if (puzzle[i][j] === 0) {
+                                emptyCells.push({ row: i, col: j });
+                                break;
+                            }
+                        }
+                        if (emptyCells.length!==0) {
+                            break;
                         }
                     }
+                    if (emptyCells.length === 0) return;
                 }
-                
-                if (emptyCells.length === 0) return;
                 
                 // 随机选择一个空单元格
                 const randomCell = emptyCells[Math.floor(Math.random() * emptyCells.length)];
