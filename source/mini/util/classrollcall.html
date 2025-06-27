@@ -1,0 +1,937 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>随机点名系统</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#165DFF',
+                        secondary: '#FF7D00',
+                        neutral: '#F5F7FA',
+                        dark: '#1D2129',
+                    },
+                    fontFamily: {
+                        inter: ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                    animation: {
+                        'bounce-slow': 'bounce 2s infinite',
+                        'float': 'float 3s ease-in-out infinite',
+                        'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-10px)' },
+                        }
+                    }
+                },
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .content-auto {
+                content-visibility: auto;
+            }
+            .text-shadow {
+                text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            }
+            .card-hover {
+                transition: all 0.3s ease;
+            }
+            .card-hover:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 10px 25px -5px rgba(22, 93, 255, 0.1), 0 10px 10px -5px rgba(22, 93, 255, 0.04);
+            }
+            .name-selected {
+                animation: selected 0.5s ease-in-out;
+            }
+            @keyframes selected {
+                0% { transform: scale(1); }
+                50% { transform: scale(1.1); box-shadow: 0 0 20px rgba(255, 125, 0, 0.6); }
+                100% { transform: scale(1); }
+            }
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-blue-50 to-indigo-50 min-h-screen font-inter text-dark">
+    <!-- 主内容区 -->
+    <main class="container mx-auto px-4 py-16">
+        <!-- 欢迎区域 -->
+        <section class="text-center mb-12 animate-fade-in">
+            <h2 class="text-[clamp(1.8rem,4vw,2.8rem)] font-bold text-dark mb-4 text-shadow">
+                随机点名，公平公正
+            </h2>
+            <p class="text-gray-600 max-w-2xl mx-auto text-[clamp(1rem,2vw,1.2rem)]">
+                上传您的Excel文件，选择姓名列，开始随机点名。简单易用，高效便捷。
+            </p>
+        </section>
+
+        <!-- 文件上传区域 -->
+        <section id="upload-section" class="max-w-3xl mx-auto mb-16">
+            <div class="bg-white rounded-2xl shadow-lg p-6 md:p-8 card-hover">
+                <!-- 切换按钮 -->
+                <div class="flex justify-center mb-8">
+                    <div class="bg-gray-100 rounded-lg p-1 flex">
+                        <button id="upload-tab" class="px-4 py-2 rounded-md font-medium transition-all bg-primary text-white shadow-sm">
+                            <i class="fa-solid fa-file-excel mr-2"></i>上传文件
+                        </button>
+                        <button id="manual-tab" class="px-4 py-2 rounded-md font-medium transition-all text-gray-600 hover:text-gray-800">
+                            <i class="fa-solid fa-keyboard mr-2"></i>手动输入
+                        </button>
+                    </div>
+                </div>
+
+                <!-- 上传文件区域 -->
+                <div id="upload-area">
+                    <div class="text-center mb-8">
+                        <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fa-solid fa-file-excel text-primary text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-2">上传Excel文件</h3>
+                        <p class="text-gray-500">支持.xlsx和.xls格式，确保文件包含姓名列</p>
+                    </div>
+                    
+                    <div class="border-2 border-dashed border-gray-300 rounded-xl p-8 text-center hover:border-primary transition-colors cursor-pointer" id="drop-area">
+                        <input type="file" id="file-input" accept=".xlsx,.xls" class="hidden">
+                        <button type="button" id="file-select-btn" class="bg-primary hover:bg-primary/90 text-white font-medium py-3 px-6 rounded-lg transition-all shadow-md hover:shadow-lg transform hover:-translate-y-0.5">
+                            <i class="fa-solid fa-upload mr-2"></i>选择文件
+                        </button>
+                        <p class="mt-4 text-gray-500">或者拖放文件到此处</p>
+                        <div class="mt-4 text-sm text-gray-400">
+                            <i class="fa-solid fa-info-circle mr-1"></i>最大文件大小: 10MB
+                        </div>
+                    </div>
+                    
+                    <div id="file-info" class="mt-6 hidden">
+                        <div class="bg-gray-50 rounded-lg p-4 flex items-center justify-between">
+                            <div class="flex items-center">
+                                <i class="fa-solid fa-file-excel text-primary mr-3"></i>
+                                <div>
+                                    <p id="file-name" class="font-medium"></p>
+                                    <p id="file-size" class="text-sm text-gray-500"></p>
+                                </div>
+                            </div>
+                            <button id="remove-file" class="text-gray-400 hover:text-red-500">
+                                <i class="fa-solid fa-times-circle"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 手动输入区域 -->
+                <div id="manual-area" class="hidden">
+                    <div class="text-center mb-8">
+                        <div class="w-16 h-16 bg-secondary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fa-solid fa-keyboard text-secondary text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-2">手动输入姓名</h3>
+                        <p class="text-gray-500">输入多个姓名，用逗号、分号、空格或换行分隔</p>
+                    </div>
+                    
+                    <div class="space-y-4">
+                        <div>
+                            <label for="names-input" class="block text-sm font-medium text-gray-700 mb-2">姓名列表</label>
+                            <textarea 
+                                id="names-input" 
+                                rows="8" 
+                                class="block w-full px-3 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary resize-none"
+                                placeholder="请输入姓名，支持以下分隔方式：&#10;张三,李四,王五&#10;张三;李四;王五&#10;张三 李四 王五&#10;张三&#10;李四&#10;王五"
+                            ></textarea>
+                        </div>
+                        
+                        <div class="flex items-center justify-between">
+                            <div class="text-sm text-gray-500">
+                                <i class="fa-solid fa-info-circle mr-1"></i>
+                                已输入: <span id="manual-count">0</span> 个姓名
+                            </div>
+                            <div class="flex w-full justify-between items-center mt-2">
+                                <button id="clear-names" class="text-sm flex items-center px-4 py-2 rounded-lg bg-gray-100 hover:bg-red-100 text-gray-500 hover:text-red-500 transition-all">
+                                    <i class="fa-solid fa-trash mr-1"></i>清空
+                                </button>
+                                <button id="add-names" class="text-sm flex items-center px-4 py-2 rounded-lg bg-primary hover:bg-primary/90 text-white transition-all">
+                                    <i class="fa-solid fa-plus mr-1"></i>追加
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 列选择区域 -->
+        <section id="column-selection" class="max-w-3xl mx-auto mb-16 hidden">
+            <div class="bg-white rounded-2xl shadow-lg p-6 md:p-8">
+                <!-- 文件模式 -->
+                <div id="file-mode-selection">
+                    <h3 class="text-xl font-semibold mb-6 flex items-center">
+                        <i class="fa-solid fa-list-ul text-primary mr-2"></i>选择姓名列
+                    </h3>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+                        <div class="col-span-1">
+                            <label for="name-column" class="block text-sm font-medium text-gray-700 mb-2">姓名列</label>
+                            <div class="relative">
+                                <select id="name-column" class="block w-full pl-3 pr-10 py-3 text-base border-gray-300 focus:outline-none focus:ring-primary focus:border-primary sm:text-sm rounded-lg appearance-none bg-white">
+                                    <!-- 选项将通过JavaScript动态添加 -->
+                                </select>
+                                <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+                                    <i class="fa-solid fa-chevron-down text-xs"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 手动输入模式 -->
+                <div id="manual-mode-selection" class="hidden">
+                    <h3 class="text-xl font-semibold mb-6 flex items-center">
+                        <i class="fa-solid fa-users text-secondary mr-2"></i>确认姓名列表
+                    </h3>
+                    
+                    <div class="bg-gray-50 rounded-lg p-4 mb-6">
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="text-sm font-medium text-gray-700">姓名预览</span>
+                            <span class="text-sm text-gray-500">共 <span id="preview-count">0</span> 个姓名</span>
+                        </div>
+                        <div id="names-preview" class="text-sm text-gray-600 max-h-32 overflow-y-auto">
+                            <!-- 姓名预览将通过JavaScript动态添加 -->
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="flex justify-end">
+                    <button id="start-selection" class="bg-secondary hover:bg-secondary/90 text-white font-medium py-3 px-6 rounded-lg transition-all shadow-md hover:shadow-lg transform hover:-translate-y-0.5">
+                        <i class="fa-solid fa-play mr-2"></i>开始点名
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- 点名区域 -->
+        <section id="selection-area" class="max-w-4xl mx-auto mb-16 hidden">
+            <div class="bg-white rounded-2xl shadow-lg p-6 md:p-8">
+                <div class="flex justify-between items-center mb-8">
+                    <h3 class="text-xl font-semibold flex items-center">
+                        <i class="fa-solid fa-random text-primary mr-2"></i>随机点名
+                    </h3>
+                    <div class="flex space-x-2">
+                        <span id="total-count" class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm font-medium">
+                            总人数: <span id="total-number">0</span>
+                        </span>
+                        <span id="picked-count" class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm font-medium">
+                            已点: <span id="picked-number">0</span>
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="relative h-64 md:h-80 flex items-center justify-center bg-gradient-to-r from-primary/5 to-secondary/5 rounded-xl mb-8 overflow-hidden">
+                    <!-- 装饰元素 -->
+                    <div class="absolute -top-10 -right-10 w-40 h-40 bg-primary/5 rounded-full"></div>
+                    <div class="absolute -bottom-10 -left-10 w-40 h-40 bg-secondary/5 rounded-full"></div>
+                    
+                    <div id="name-display" class="text-center z-10">
+                        <p class="text-gray-500 mb-2 text-sm">准备开始</p>
+                        <div id="name-box" class="text-[clamp(2rem,5vw,3.5rem)] font-bold text-dark py-4 px-8 rounded-xl min-h-[120px] flex items-center justify-center">
+                            点击开始按钮
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="flex justify-center space-x-4">
+                    <button id="pick-name" class="bg-secondary hover:bg-secondary/90 text-white font-medium py-3 px-8 rounded-lg transition-all shadow-md hover:shadow-lg transform hover:-translate-y-0.5 text-lg">
+                        <i class="fa-solid fa-hand-pointer mr-2"></i>点名
+                    </button>
+                    <button id="back-to-upload" class="bg-gray-200 hover:bg-gray-300 text-gray-700 font-medium py-3 px-6 rounded-lg transition-all shadow-md hover:shadow-lg transform hover:-translate-y-0.5">
+                        <i class="fa-solid fa-arrow-left mr-2"></i>返回
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- 已点名列表 -->
+        <section id="history-section" class="max-w-4xl mx-auto hidden">
+            <div class="bg-white rounded-2xl shadow-lg p-6 md:p-8">
+                <div class="flex justify-between items-center mb-6">
+                    <h3 class="text-xl font-semibold flex items-center">
+                        <i class="fa-solid fa-history text-primary mr-2"></i>点名历史
+                    </h3>
+                    <button id="clear-history" class="text-sm text-gray-500 hover:text-red-500 flex items-center">
+                        <i class="fa-solid fa-trash mr-1"></i>清空历史
+                    </button>
+                </div>
+                
+                <div id="history-list" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3 max-h-60 overflow-y-auto p-2">
+                    <!-- 历史记录将通过JavaScript动态添加 -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 加载动画模态框 -->
+    <div id="loading-modal" class="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-50 hidden">
+        <div class="bg-white rounded-xl p-8 flex flex-col items-center">
+            <div class="w-16 h-16 border-4 border-primary border-t-transparent rounded-full animate-spin mb-4"></div>
+            <p id="loading-text" class="text-lg font-medium text-gray-800">处理中...</p>
+        </div>
+    </div>
+
+    <script>
+        // 全局变量
+        let excelData = null;
+        let nameColumn = null;
+        let names = [];
+        let pickedNames = [];
+        let isSelecting = false;
+        let selectionInterval = null;
+        let currentMode = 'upload'; // 'upload' 或 'manual'
+        
+        // DOM 元素
+        const fileInput = document.getElementById('file-input');
+        const fileSelectBtn = document.getElementById('file-select-btn');
+        const dropArea = document.getElementById('drop-area');
+        const fileInfo = document.getElementById('file-info');
+        const fileName = document.getElementById('file-name');
+        const fileSize = document.getElementById('file-size');
+        const removeFile = document.getElementById('remove-file');
+        const columnSelection = document.getElementById('column-selection');
+        const nameColumnSelect = document.getElementById('name-column');
+        const startSelection = document.getElementById('start-selection');
+        const selectionArea = document.getElementById('selection-area');
+        const nameDisplay = document.getElementById('name-display');
+        const nameBox = document.getElementById('name-box');
+        const pickName = document.getElementById('pick-name');
+        const backToUpload = document.getElementById('back-to-upload');
+        const totalCount = document.getElementById('total-number');
+        const pickedCount = document.getElementById('picked-number');
+        const historySection = document.getElementById('history-section');
+        const historyList = document.getElementById('history-list');
+        const clearHistory = document.getElementById('clear-history');
+        const loadingModal = document.getElementById('loading-modal');
+        const loadingText = document.getElementById('loading-text');
+        
+        // 新增的DOM元素
+        const uploadTab = document.getElementById('upload-tab');
+        const manualTab = document.getElementById('manual-tab');
+        const uploadArea = document.getElementById('upload-area');
+        const manualArea = document.getElementById('manual-area');
+        const namesInput = document.getElementById('names-input');
+        const manualCount = document.getElementById('manual-count');
+        const clearNames = document.getElementById('clear-names');
+        const fileModeSelection = document.getElementById('file-mode-selection');
+        const manualModeSelection = document.getElementById('manual-mode-selection');
+        const namesPreview = document.getElementById('names-preview');
+        const previewCount = document.getElementById('preview-count');
+        
+        // 页面加载完成后执行
+        document.addEventListener('DOMContentLoaded', () => {
+            // 恢复localStorage中的names
+            const savedNames = localStorage.getItem('classrollcall_names');
+            if (savedNames) {
+                try {
+                    names = JSON.parse(savedNames);
+                } catch (e) {
+                    names = [];
+                }
+            }
+            // 如果有names，自动切换到手动输入模式并显示预览
+            if (names.length > 0) {
+                switchToManualMode();
+                showManualPreview(names);
+                namesInput.value = '';
+                manualCount.textContent = names.length;
+            }
+
+            // 切换功能
+            uploadTab.addEventListener('click', () => switchToUploadMode());
+            manualTab.addEventListener('click', () => switchToManualMode());
+            
+            // 手动输入相关事件
+            namesInput.addEventListener('input', updateManualCount);
+            clearNames.addEventListener('click', clearManualInput);
+            document.getElementById('add-names').addEventListener('click', addNames);
+            
+            // 文件选择按钮点击事件
+            fileSelectBtn.addEventListener('click', () => {
+                fileInput.click();
+            });
+            
+            // 文件选择事件
+            fileInput.addEventListener('change', handleFileSelect);
+            
+            // 拖放事件
+            ['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
+                dropArea.addEventListener(eventName, preventDefaults, false);
+            });
+            
+            function preventDefaults(e) {
+                e.preventDefault();
+                e.stopPropagation();
+            }
+            
+            ['dragenter', 'dragover'].forEach(eventName => {
+                dropArea.addEventListener(eventName, highlight, false);
+            });
+            
+            ['dragleave', 'drop'].forEach(eventName => {
+                dropArea.addEventListener(eventName, unhighlight, false);
+            });
+            
+            function highlight() {
+                dropArea.classList.add('border-primary');
+                dropArea.classList.add('bg-primary/5');
+            }
+            
+            function unhighlight() {
+                dropArea.classList.remove('border-primary');
+                dropArea.classList.remove('bg-primary/5');
+            }
+            
+            dropArea.addEventListener('drop', handleDrop, false);
+            
+            function handleDrop(e) {
+                const dt = e.dataTransfer;
+                const files = dt.files;
+                
+                if (files.length) {
+                    handleFiles(files);
+                }
+            }
+            
+            // 移除文件
+            removeFile.addEventListener('click', () => {
+                resetFileInput();
+            });
+            
+            // 开始点名
+            startSelection.addEventListener('click', () => {
+                if (currentMode === 'upload') {
+                    // 文件模式
+                    nameColumn = nameColumnSelect.value;
+                    if (!nameColumn) {
+                        showToast('请选择姓名列', 'error');
+                        return;
+                    }
+                    
+                    // 提取姓名列表
+                    names = excelData.map(row => row[nameColumn]).filter(name => name && name.trim() !== '');
+                    
+                    if (names.length === 0) {
+                        showToast('所选列中没有找到有效姓名', 'error');
+                        return;
+                    }
+                } else {
+                    // 手动输入模式
+                    names = parseManualInput();
+                    
+                    if (names.length === 0) {
+                        showToast('请输入至少一个姓名', 'error');
+                        return;
+                    }
+                }
+                
+                // 更新计数
+                totalCount.textContent = names.length;
+                pickedCount.textContent = pickedNames.length;
+                
+                // 隐藏输入区域和列选择区域
+                document.getElementById('upload-section').classList.add('hidden');
+                columnSelection.classList.add('hidden');
+                
+                // 显示点名区域
+                selectionArea.classList.remove('hidden');
+                historySection.classList.remove('hidden');
+                
+                // 更新历史记录
+                updateHistoryList();
+            });
+            
+            // 点名按钮
+            pickName.addEventListener('click', () => {
+                if (isSelecting) {
+                    stopSelection();
+                } else {
+                    // 检查是否所有名字都已被选中
+                    if (pickedNames.length >= names.length) {
+                        showToast('所有名字都已被选中！', 'info');
+                        pickedNames = [];
+                        pickedCount.textContent = '0';
+                        updateHistoryList();
+                        return;
+                    }
+                    
+                    startSelectionAnimation();
+                }
+            });
+            
+            // 返回上传页面
+            backToUpload.addEventListener('click', () => {
+                if (isSelecting) {
+                    stopSelection();
+                }
+                // 隐藏点名和历史区域
+                selectionArea.classList.add('hidden');
+                historySection.classList.add('hidden');
+                // 显示输入区域
+                document.getElementById('upload-section').classList.remove('hidden');
+                // 文件模式
+                if (currentMode === 'upload') {
+                    if (excelData !== null) {
+                        fileModeSelection.classList.remove('hidden');
+                        manualModeSelection.classList.add('hidden');
+                        columnSelection.classList.remove('hidden');
+                    } else {
+                        columnSelection.classList.add('hidden');
+                    }
+                } else {
+                    // 手动输入模式
+                    manualArea.classList.remove('hidden');
+                    if (names.length > 0) {
+                        showManualPreview(names);
+                    } else {
+                        columnSelection.classList.add('hidden');
+                    }
+                }
+            });
+            
+            // 清空历史记录
+            clearHistory.addEventListener('click', () => {
+                pickedNames = [];
+                pickedCount.textContent = '0';
+                updateHistoryList();
+            });
+            
+            // 滚动效果
+            window.addEventListener('scroll', () => {
+                // 由于没有导航栏，这里不需要处理滚动效果
+            });
+        });
+        
+        // 处理文件选择
+        function handleFileSelect(e) {
+            const files = e.target.files;
+            if (files.length) {
+                handleFiles(files);
+            }
+        }
+        
+        // 处理文件
+        function handleFiles(files) {
+            const file = files[0];
+            if (!file.name.match(/\.(xlsx|xls)$/i)) {
+                showToast('请上传Excel文件 (.xlsx 或 .xls)', 'error');
+                return;
+            }
+            
+            // 显示文件信息
+            fileName.textContent = file.name;
+            fileSize.textContent = formatFileSize(file.size);
+            fileInfo.classList.remove('hidden');
+            
+            // 处理Excel文件
+            showLoading('正在读取文件...');
+            const reader = new FileReader();
+            
+            reader.onload = function(e) {
+                try {
+                    const data = new Uint8Array(e.target.result);
+                    const workbook = XLSX.read(data, { type: 'array' });
+                    
+                    // 获取第一个工作表
+                    const firstSheetName = workbook.SheetNames[0];
+                    const worksheet = workbook.Sheets[firstSheetName];
+                    
+                    // 转换为JSON
+                    excelData = XLSX.utils.sheet_to_json(worksheet);
+                    
+                    if (excelData.length === 0) {
+                        throw new Error('Excel文件中没有数据');
+                    }
+                    
+                    // 获取列名
+                    const columnNames = Object.keys(excelData[0]);
+                    
+                    // 清空并添加列选项
+                    nameColumnSelect.innerHTML = '';
+                    columnNames.forEach(column => {
+                        const option = document.createElement('option');
+                        option.value = column;
+                        option.textContent = column;
+                        nameColumnSelect.appendChild(option);
+                    });
+                    
+                    // 显示列选择区域（文件模式）
+                    fileModeSelection.classList.remove('hidden');
+                    manualModeSelection.classList.add('hidden');
+                    columnSelection.classList.remove('hidden');
+                    hideLoading();
+                    
+                    // 保存到localStorage
+                    localStorage.setItem('classrollcall_names', JSON.stringify(names));
+                    
+                } catch (error) {
+                    hideLoading();
+                    showToast(`处理Excel文件时出错: ${error.message}`, 'error');
+                    resetFileInput();
+                }
+            };
+            
+            reader.onerror = function() {
+                hideLoading();
+                showToast('读取文件时发生错误', 'error');
+                resetFileInput();
+            };
+            
+            reader.readAsArrayBuffer(file);
+        }
+        
+        // 重置文件输入
+        function resetFileInput() {
+            fileInput.value = '';
+            fileInfo.classList.add('hidden');
+            columnSelection.classList.add('hidden');
+            selectionArea.classList.add('hidden');
+            historySection.classList.add('hidden');
+            excelData = null;
+            nameColumn = null;
+            names = [];
+            pickedNames = [];
+            localStorage.setItem('classrollcall_names', JSON.stringify(names));
+        }
+        
+        // 格式化文件大小
+        function formatFileSize(bytes) {
+            if (bytes === 0) return '0 Bytes';
+            const k = 1024;
+            const sizes = ['Bytes', 'KB', 'MB', 'GB'];
+            const i = Math.floor(Math.log(bytes) / Math.log(k));
+            return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + ' ' + sizes[i];
+        }
+        
+        // 开始选择动画
+        function startSelectionAnimation() {
+            isSelecting = true;
+            pickName.innerHTML = '<i class="fa-solid fa-stop mr-2"></i>停止';
+            nameDisplay.querySelector('p').textContent = '正在随机选择...';
+            nameBox.classList.remove('name-selected');
+            
+            // 过滤掉已经选中的名字
+            const availableNames = names.filter(name => !pickedNames.includes(name));
+            
+            // 快速切换名字
+            let counter = 0;
+            selectionInterval = setInterval(() => {
+                const randomIndex = Math.floor(Math.random() * availableNames.length);
+                nameBox.textContent = availableNames[randomIndex];
+                
+                // 动画效果
+                nameBox.classList.add('animate-pulse-slow');
+                
+                counter++;
+                if (counter > 10) {
+                    nameBox.classList.remove('animate-pulse-slow');
+                    counter = 0;
+                }
+            }, 100);
+        }
+        
+        // 停止选择并确定结果
+        function stopSelection() {
+            clearInterval(selectionInterval);
+            isSelecting = false;
+            pickName.innerHTML = '<i class="fa-solid fa-hand-pointer mr-2"></i>点名';
+            
+            // 过滤掉已经选中的名字
+            const availableNames = names.filter(name => !pickedNames.includes(name));
+            
+            if (availableNames.length === 0) {
+                nameBox.textContent = '所有名字都已被选中';
+                nameDisplay.querySelector('p').textContent = '已完成';
+                return;
+            }
+            
+            // 随机选择一个名字
+            const randomIndex = Math.floor(Math.random() * availableNames.length);
+            const selectedName = availableNames[randomIndex];
+            
+            // 添加到已选列表
+            pickedNames.push(selectedName);
+            
+            // 更新显示
+            nameBox.textContent = selectedName;
+            nameBox.classList.add('name-selected');
+            nameDisplay.querySelector('p').textContent = '已选中';
+            pickedCount.textContent = pickedNames.length;
+            
+            // 更新历史记录
+            updateHistoryList();
+            
+            // 播放动画
+            nameBox.animate([
+                { transform: 'scale(1)' },
+                { transform: 'scale(1.1)' },
+                { transform: 'scale(1)' }
+            ], {
+                duration: 500,
+                easing: 'ease-in-out'
+            });
+            
+            // 显示提示
+            showToast(`已选中: ${selectedName}`, 'success');
+        }
+        
+        // 更新历史记录列表
+        function updateHistoryList() {
+            historyList.innerHTML = '';
+            
+            if (pickedNames.length === 0) {
+                const emptyItem = document.createElement('div');
+                emptyItem.className = 'col-span-full text-center text-gray-400 py-4';
+                emptyItem.innerHTML = '<i class="fa-solid fa-history mr-2"></i>暂无点名记录';
+                historyList.appendChild(emptyItem);
+                return;
+            }
+            
+            pickedNames.forEach((name, index) => {
+                const historyItem = document.createElement('div');
+                historyItem.className = 'bg-gray-50 rounded-lg p-3 flex items-center justify-between shadow-sm hover:shadow transition-shadow';
+                historyItem.innerHTML = `
+                    <span class="font-medium">${name}</span>
+                    <span class="text-xs text-gray-400">${index + 1}</span>
+                `;
+                historyList.appendChild(historyItem);
+            });
+        }
+        
+        // 显示加载中
+        function showLoading(text = '处理中...') {
+            loadingText.textContent = text;
+            loadingModal.classList.remove('hidden');
+        }
+        
+        // 隐藏加载中
+        function hideLoading() {
+            loadingModal.classList.add('hidden');
+        }
+        
+        // 显示提示框
+        function showToast(message, type = 'info') {
+            // 创建toast元素
+            const toast = document.createElement('div');
+            
+            // 设置样式和内容
+            let bgColor, icon;
+            switch(type) {
+                case 'success':
+                    bgColor = 'bg-green-500';
+                    icon = 'fa-check-circle';
+                    break;
+                case 'error':
+                    bgColor = 'bg-red-500';
+                    icon = 'fa-exclamation-circle';
+                    break;
+                case 'warning':
+                    bgColor = 'bg-yellow-500';
+                    icon = 'fa-exclamation-triangle';
+                    break;
+                default:
+                    bgColor = 'bg-blue-500';
+                    icon = 'fa-info-circle';
+            }
+            
+            toast.className = `${bgColor} text-white px-4 py-3 rounded-lg shadow-lg flex items-center fixed top-4 right-4 z-50 transform transition-all duration-300 translate-x-full`;
+            toast.innerHTML = `
+                <i class="fa-solid ${icon} mr-2"></i>
+                <span>${message}</span>
+            `;
+            
+            // 添加到页面
+            document.body.appendChild(toast);
+            
+            // 显示动画
+            setTimeout(() => {
+                toast.classList.remove('translate-x-full');
+            }, 10);
+            
+            // 自动关闭
+            setTimeout(() => {
+                toast.classList.add('translate-x-full');
+                setTimeout(() => {
+                    document.body.removeChild(toast);
+                }, 300);
+            }, 3000);
+        }
+        
+        // 切换到上传模式
+        function switchToUploadMode() {
+            currentMode = 'upload';
+            
+            // 更新按钮样式
+            uploadTab.className = 'px-4 py-2 rounded-md font-medium transition-all bg-primary text-white shadow-sm';
+            manualTab.className = 'px-4 py-2 rounded-md font-medium transition-all text-gray-600 hover:text-gray-800';
+            
+            // 显示上传区域，隐藏手动输入区域
+            uploadArea.classList.remove('hidden');
+            manualArea.classList.add('hidden');
+            
+            // 重置手动输入
+            namesInput.value = '';
+            manualCount.textContent = '0';
+            
+            // 隐藏列选择区域
+            columnSelection.classList.add('hidden');
+        }
+        
+        // 切换到手动输入模式
+        function switchToManualMode() {
+            currentMode = 'manual';
+            
+            // 更新按钮样式
+            uploadTab.className = 'px-4 py-2 rounded-md font-medium transition-all text-gray-600 hover:text-gray-800';
+            manualTab.className = 'px-4 py-2 rounded-md font-medium transition-all bg-secondary text-white shadow-sm';
+            
+            // 显示手动输入区域，隐藏上传区域
+            uploadArea.classList.add('hidden');
+            manualArea.classList.remove('hidden');
+            
+            // 重置文件输入
+            resetFileInput();
+            
+            // 更新手动输入计数
+            updateManualCount();
+            
+            // 检查是否已有输入内容，如果有则显示预览
+            const inputText = namesInput.value.trim();
+            if (inputText) {
+                const parsedNames = parseManualInput();
+                names = parsedNames
+                if (parsedNames.length > 0) {
+                    showManualPreview(parsedNames);
+                }
+            }
+        }
+        
+        // 显示手动输入预览
+        function showManualPreview(names) {
+            // 显示手动模式的选择界面
+            fileModeSelection.classList.add('hidden');
+            manualModeSelection.classList.remove('hidden');
+            columnSelection.classList.remove('hidden');
+            
+            // 更新预览
+            updateNamesPreview(names);
+        }
+        
+        // 更新手动输入计数
+        function updateManualCount() {
+            const inputText = namesInput.value.trim();
+            if (!inputText) {
+                manualCount.textContent = '0';
+                // 如果当前在手动模式且列选择区域可见，隐藏预览
+                if (currentMode === 'manual' && !columnSelection.classList.contains('hidden')) {
+                    columnSelection.classList.add('hidden');
+                }
+                return;
+            }
+            
+            const parsedNames = parseManualInput();
+            manualCount.textContent = parsedNames.length;
+            
+            // 如果当前在手动模式，显示预览
+            if (currentMode === 'manual') {
+                if (parsedNames.length > 0) {
+                    showManualPreview(parsedNames);
+                } else {
+                    columnSelection.classList.add('hidden');
+                }
+            }
+        }
+        
+        // 解析手动输入的姓名
+        function parseManualInput() {
+            const inputText = namesInput.value.trim();
+            if (!inputText) return [];
+            
+            // 支持多种分隔符：逗号、分号、空格、换行
+            const names = inputText
+                .split(/[,，;\s\n]+/) // 按逗号、分号、空格、换行分割
+                .map(name => name.trim()) // 去除首尾空格
+                .filter(name => name !== ''); // 过滤空字符串
+            
+            return names;
+        }
+        
+        // 清空手动输入
+        function clearManualInput() {
+            namesInput.value = '';
+            manualCount.textContent = '0';
+            // 隐藏预览区域
+            if (currentMode === 'manual') {
+                columnSelection.classList.add('hidden');
+            }
+            // 清空全局names并保存
+            names = [];
+            localStorage.setItem('classrollcall_names', JSON.stringify(names));
+        }
+        
+        // 更新姓名预览
+        function updateNamesPreview(names) {
+            previewCount.textContent = names.length;
+            
+            if (names.length === 0) {
+                namesPreview.innerHTML = '<span class="text-gray-400">暂无姓名</span>';
+                return;
+            }
+            
+            const previewHtml = names.slice(0, 10).map(name => 
+                `<span class="inline-block bg-white px-2 py-1 rounded mr-2 mb-1 text-xs">${name}</span>`
+            ).join('');
+            
+            if (names.length > 10) {
+                namesPreview.innerHTML = previewHtml + `<span class="text-gray-400 text-xs">... 还有 ${names.length - 10} 个</span>`;
+            } else {
+                namesPreview.innerHTML = previewHtml;
+            }
+        }
+        
+        // 追加姓名
+        function addNames() {
+            // 保存当前姓名列表
+            const currentNames = names.slice();
+            // 获取新输入的姓名
+            const newNames = parseManualInput();
+            if (newNames.length === 0) {
+                showToast('请先输入需要追加的姓名', 'warning');
+                return;
+            }
+            // 清空输入区域，准备接受新的输入
+            namesInput.value = '';
+            manualCount.textContent = '0';
+            // 追加新姓名（去重）
+            newNames.forEach(name => {
+                if (!currentNames.includes(name)) {
+                    currentNames.push(name);
+                }
+            });
+            // 更新姓名列表
+            names = currentNames;
+            // 保存到localStorage
+            localStorage.setItem('classrollcall_names', JSON.stringify(names));
+            // 更新预览区域
+            if (!columnSelection.classList.contains('hidden')) {
+                updateNamesPreview(names);
+                previewCount.textContent = names.length;
+            }
+            showToast(`成功追加 ${newNames.length} 个姓名`, 'success');
+        }
+    </script>
+</body>
+</html>
+    

@@ -103,10 +103,16 @@ menu:
   archives: /archives/ || fa fa-archive
   docs: /docs/ || fa fa-book
   comments: /guestbook/ || fa fa-comments
-  minigame: 
-    default: /minigame/ || fa fa-gamepad 
-    sudoku:
-      default: /sudoku/ || fa fa-puzzle-piece 
+  mini: 
+    default: /mini/ || fa fa-tools 
+    minigame:
+      default: /game/ || fa fa-gamepad
+      sudoku: /sudoku/ || fa fa-gamepad
+    miniutil:
+      default: /util/ || fa fa-wrench
+      classrollcall: /util/classrollcall/ || fa fa-user-clock
+
+     
 #schedule: /schedule/ || fa fa-calendar
 #sitemap: /sitemap.xml || fa fa-sitemap
 #  commonweal: /404.html || fa fa-heartbeat
