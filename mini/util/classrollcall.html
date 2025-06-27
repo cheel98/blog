@@ -1,0 +1,1340 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"><title>cheel blog | cheel blog</title><meta name="author" content="cheel"><meta name="copyright" content="cheel"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#f7f9fe"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-touch-fullscreen" content="yes"><meta name="apple-mobile-web-app-title" content="cheel blog"><meta name="application-name" content="cheel blog"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="#f7f9fe"><meta property="og:type" content="website"><meta property="og:title" content="cheel blog"><meta property="og:url" content="https://cheel.github.io/blog/mini/util/classrollcall.html"><meta property="og:site_name" content="cheel blog"><meta property="og:description" content="随机点名系统                             tailwind.config &amp;#x3D; {             theme: {                 extend: {                     colors: {"><meta property="og:locale" content="zh-CN"><meta property="og:image" content="https://avatars.githubusercontent.com/u/52066949?v=4"><meta property="article:author" content="cheel"><meta property="article:tag"><meta name="twitter:card" content="summary"><meta name="twitter:image" content="https://avatars.githubusercontent.com/u/52066949?v=4"><meta name="description" content="随机点名系统                             tailwind.config &amp;#x3D; {             theme: {                 extend: {                     colors: {"><link rel="shortcut icon" href="/blog/favicon.ico"><link rel="canonical" href="https://cheel.github.io/blog/mini/util/classrollcall.html"><link rel="preconnect" href="//cdn.cbd.int"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><meta name="google-site-verification" content="xxx"/><meta name="baidu-site-verification" content="code-xxx"/><meta name="msvalidate.01" content="xxx"/><link rel="stylesheet" href="/blog/css/index.css"><link rel="stylesheet" href="https://cdn.cbd.int/node-snackbar@0.1.16/dist/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.cbd.int/@fancyapps/ui@5.0.28/dist/fancybox/fancybox.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  linkPageTop: undefined,
+  peoplecanvas: {"enable":true,"img":"https://upload-bbs.miyoushe.com/upload/2024/07/27/125766904/ba62475f396df9de3316a08ed9e65d86_5680958632268053399..png"},
+  postHeadAiDescription: {"enable":true,"gptName":"AnZhiYu","mode":"local","switchBtn":false,"btnLink":"https://afdian.net/item/886a79d4db6711eda42a52540025c377","randomNum":3,"basicWordCount":1000,"key":"xxxx","Referer":"https://xx.xx/"},
+  diytitle: undefined,
+  LA51: undefined,
+  greetingBox: undefined,
+  twikooEnvId: '',
+  commentBarrageConfig:undefined,
+  music_page_default: "nav_music",
+  root: '/blog/',
+  preloader: {"source":3},
+  friends_vue_info: {"apiurl":null},
+  navMusic: true,
+  mainTone: undefined,
+  authorStatus: undefined,
+  algolia: undefined,
+  localSearch: undefined,
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"简","rightMenuMsgToTraditionalChinese":"转为繁体","rightMenuMsgToSimplifiedChinese":"转为简体"},
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":330},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    simplehomepage: true,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"copy":true,"copyrightEbable":false,"limitCount":50,"languages":{"author":"作者: cheel","link":"链接: ","source":"来源: cheel blog","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。","copySuccess":"复制成功，复制和转载请标注本文地址"}},
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"你已切换为繁体","cht_to_chs":"你已切换为简体","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#425AEF","bgDark":"#1f1f1f","position":"top-center"},
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.cbd.int/flickr-justified-gallery@2.1.2/dist/fjGallery.min.js',
+      css: 'https://cdn.cbd.int/flickr-justified-gallery@2.1.2/dist/fjGallery.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isAnchor: false,
+  shortcutKey: undefined,
+  autoDarkmode: true
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  configTitle: 'cheel blog',
+  title: 'cheel blog',
+  postAI: '',
+  pageFillDescription: '上传Excel文件, 手动输入姓名随机点名系统随机点名公平公正上传您的文件选择姓名列开始随机点名简单易用高效便捷上传文件手动输入上传文件支持和格式确保文件包含姓名列选择文件或者拖放文件到此处最大文件大小手动输入姓名输入多个姓名用逗号分号空格或换行分隔姓名列表已输入个姓名清空追加选择姓名列姓名列确认姓名列表姓名预览共个姓名开始点名随机点名总人数已点准备开始点击开始按钮点名返回点名历史清空历史处理中全局变量或元素新增的元素页面加载完成后执行恢复中的如果有自动切换到手动输入模式并显示预览切换功能手动输入相关事件文件选择按钮点击事件文件选择事件拖放事件移除文件开始点名文件模式请选择姓名列提取姓名列表所选列中没有找到有效姓名手动输入模式请输入至少一个姓名更新计数隐藏输入区域和列选择区域显示点名区域更新历史记录点名按钮检查是否所有名字都已被选中所有名字都已被选中返回上传页面隐藏点名和历史区域显示输入区域文件模式手动输入模式清空历史记录滚动效果由于没有导航栏这里不需要处理滚动效果处理文件选择处理文件请上传文件或显示文件信息处理文件正在读取文件获取第一个工作表转换为文件中没有数据获取列名清空并添加列选项显示列选择区域文件模式保存到处理文件时出错读取文件时发生错误重置文件输入格式化文件大小开始选择动画停止正在随机选择过滤掉已经选中的名字快速切换名字动画效果停止选择并确定结果点名过滤掉已经选中的名字所有名字都已被选中已完成随机选择一个名字添加到已选列表更新显示已选中更新历史记录播放动画显示提示已选中更新历史记录列表暂无点名记录显示加载中处理中隐藏加载中显示提示框创建元素设置样式和内容添加到页面显示动画自动关闭切换到上传模式更新按钮样式显示上传区域隐藏手动输入区域重置手动输入隐藏列选择区域切换到手动输入模式更新按钮样式显示手动输入区域隐藏上传区域重置文件输入更新手动输入计数检查是否已有输入内容如果有则显示预览显示手动输入预览显示手动模式的选择界面更新预览更新手动输入计数如果当前在手动模式且列选择区域可见隐藏预览如果当前在手动模式显示预览解析手动输入的姓名支持多种分隔符逗号分号空格换行按逗号分号空格换行分割去除首尾空格过滤空字符串清空手动输入隐藏预览区域清空全局并保存更新姓名预览暂无姓名还有个追加姓名保存当前姓名列表获取新输入的姓名请先输入需要追加的姓名清空输入区域准备接受新的输入追加新姓名去重更新姓名列表保存到更新预览区域成功追加个姓名',
+  isPost: false,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: false,
+  postUpdate: '2025-06-27 09:51:07',
+  postMainColor: '',
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#18171d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#f7f9fe')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+          const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+          const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+          const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+          if (t === undefined) {
+            if (isLightMode) activateLightMode()
+            else if (isDarkMode) activateDarkMode()
+            else if (isNotSpecified || hasNoSupport) {
+              const now = new Date()
+              const hour = now.getHours()
+              const isNight = hour <= 6 || hour >= 18
+              isNight ? activateDarkMode() : activateLightMode()
+            }
+            window.matchMedia('(prefers-color-scheme: dark)').addListener(e => {
+              if (saveToLocal.get('theme') === undefined) {
+                e.matches ? activateDarkMode() : activateLightMode()
+              }
+            })
+          } else if (t === 'light') activateLightMode()
+          else activateDarkMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><meta name="generator" content="Hexo 7.3.0"></head><body data-type="anzhiyu"><div id="web_bg"></div><div id="an_music_bg"></div><div id="loading-box" onclick="document.getElementById(&quot;loading-box&quot;).classList.add(&quot;loaded&quot;)"><div class="loading-bg"><img class="loading-img nolazyload" alt="加载头像" src="https://npm.elemecdn.com/anzhiyu-blog-static@1.0.4/img/avatar.jpg"/><div class="loading-image-dot"></div></div></div><script>const preloader = {
+  endLoading: () => {
+    document.getElementById('loading-box').classList.add("loaded");
+  },
+  initLoading: () => {
+    document.getElementById('loading-box').classList.remove("loaded")
+  }
+}
+window.addEventListener('load',()=> { preloader.endLoading() })
+setTimeout(function(){preloader.endLoading();},10000)
+
+if (true) {
+  document.addEventListener('pjax:send', () => { preloader.initLoading() })
+  document.addEventListener('pjax:complete', () => { preloader.endLoading() })
+}</script><link rel="stylesheet" href="https://cdn.cbd.int/anzhiyu-theme-static@1.1.10/progress_bar/progress_bar.css"/><script async="async" src="https://cdn.cbd.int/pace-js@1.2.4/pace.min.js" data-pace-options="{ &quot;restartOnRequestAfter&quot;:false,&quot;eventLag&quot;:false}"></script><div class="page" id="body-wrap"><header class="not-top-img" id="page-header"><nav id="nav"><div id="nav-group"><span id="blog_name"><a id="site-name" href="/blog/" accesskey="h"><div class="title">cheel blog</div><i class="anzhiyufont anzhiyu-icon-house-chimney"></i></a></span><div class="mask-name-container"><div id="name-container"><a id="page-name" href="javascript:anzhiyu.scrollToDest(0, 500)">PAGE_NAME</a></div></div><div id="menus"></div><div id="nav-right"><div class="nav-button" id="randomPost_button"><a class="site-page" onclick="toRandomPost()" title="随机前往一个文章" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-dice"></i></a></div><div class="nav-button" id="search-button"><a class="site-page social-icon search" href="javascript:void(0);" title="搜索🔍" accesskey="s"><i class="anzhiyufont anzhiyu-icon-magnifying-glass"></i><span> 搜索</span></a></div><input id="center-console" type="checkbox"/><label class="widget" for="center-console" title="中控台" onclick="anzhiyu.switchConsole();"><i class="left"></i><i class="widget center"></i><i class="widget right"></i></label><div id="console"><div class="console-card-group-reward"><ul class="reward-all console-card"><li class="reward-item"><a href="https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/qrcode-weichat.png" target="_blank"><img class="post-qr-code-img" alt="微信" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/qrcode-weichat.png"/></a><div class="post-qr-code-desc">微信</div></li><li class="reward-item"><a href="https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/qrcode-alipay.png" target="_blank"><img class="post-qr-code-img" alt="支付宝" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/qrcode-alipay.png"/></a><div class="post-qr-code-desc">支付宝</div></li></ul></div><div class="console-card-group"><div class="console-card-group-left"><div class="console-card" id="card-newest-comments"><div class="card-content"><div class="author-content-item-tips">互动</div><span class="author-content-item-title"> 最新评论</span></div><div class="aside-list"><span>正在加载中...</span></div></div></div><div class="console-card-group-right"><div class="console-card tags"><div class="card-content"><div class="author-content-item-tips">兴趣点</div><span class="author-content-item-title">寻找你感兴趣的领域</span><div class="card-tags"><div class="item-headline"></div><div class="card-tag-cloud"><a href="/blog/tags/%E5%8D%9A%E5%AE%A2/" style="font-size: 1.05rem;">博客<sup>1</sup></a><a href="/blog/tags/%E6%8E%92%E5%BA%8F/" style="font-size: 1.05rem;">排序<sup>1</sup></a><a href="/blog/tags/%E6%95%B0%E7%BB%84/" style="font-size: 1.05rem;">数组<sup>1</sup></a><a href="/blog/tags/%E6%AC%A2%E8%BF%8E/" style="font-size: 1.05rem;">欢迎<sup>1</sup></a><a href="/blog/tags/%E7%AE%97%E6%B3%95/" style="font-size: 1.05rem;">算法<sup>1</sup></a></div></div><hr/></div></div><div class="console-card history"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-box-archiv"></i><span>文章</span></div><div class="card-archives"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-archive"></i><span>归档</span></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/blog/archives/2025/06/"><span class="card-archive-list-date">六月 2025</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">1</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/blog/archives/2025/05/"><span class="card-archive-list-date">五月 2025</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">2</span><span>篇</span></div></a></li></ul></div><hr/></div></div></div><div class="button-group"><div class="console-btn-item"><a class="darkmode_switchbutton" title="显示模式切换" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-moon"></i></a></div><div class="console-btn-item" id="consoleHideAside" onclick="anzhiyu.hideAsideBtn()" title="边栏显示控制"><a class="asideSwitch"><i class="anzhiyufont anzhiyu-icon-arrows-left-right"></i></a></div><div class="console-btn-item" id="consoleMusic" onclick="anzhiyu.musicToggle()" title="音乐开关"><a class="music-switch"><i class="anzhiyufont anzhiyu-icon-music"></i></a></div></div><div class="console-mask" onclick="anzhiyu.hideConsole()" href="javascript:void(0);"></div></div><div class="nav-button" id="nav-totop"><a class="totopbtn" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i><span id="percent" onclick="anzhiyu.scrollToDest(0,500)">0</span></a></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);" title="切换"><i class="anzhiyufont anzhiyu-icon-bars"></i></a></div></div></div></nav></header><main id="blog-container"><div class="layout" id="content-inner"><div id="page"><h1 class="page-title"></h1><div id="article-container"><!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>随机点名系统</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#165DFF',
+                        secondary: '#FF7D00',
+                        neutral: '#F5F7FA',
+                        dark: '#1D2129',
+                    },
+                    fontFamily: {
+                        inter: ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                    animation: {
+                        'bounce-slow': 'bounce 2s infinite',
+                        'float': 'float 3s ease-in-out infinite',
+                        'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-10px)' },
+                        }
+                    }
+                },
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .content-auto {
+                content-visibility: auto;
+            }
+            .text-shadow {
+                text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            }
+            .card-hover {
+                transition: all 0.3s ease;
+            }
+            .card-hover:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 10px 25px -5px rgba(22, 93, 255, 0.1), 0 10px 10px -5px rgba(22, 93, 255, 0.04);
+            }
+            .name-selected {
+                animation: selected 0.5s ease-in-out;
+            }
+            @keyframes selected {
+                0% { transform: scale(1); }
+                50% { transform: scale(1.1); box-shadow: 0 0 20px rgba(255, 125, 0, 0.6); }
+                100% { transform: scale(1); }
+            }
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-blue-50 to-indigo-50 min-h-screen font-inter text-dark">
+    <!-- 主内容区 -->
+    <main class="container mx-auto px-4 py-16">
+        <!-- 欢迎区域 -->
+        <section class="text-center mb-12 animate-fade-in">
+            <h2 class="text-[clamp(1.8rem,4vw,2.8rem)] font-bold text-dark mb-4 text-shadow">
+                随机点名，公平公正
+            </h2>
+            <p class="text-gray-600 max-w-2xl mx-auto text-[clamp(1rem,2vw,1.2rem)]">
+                上传您的Excel文件，选择姓名列，开始随机点名。简单易用，高效便捷。
+            </p>
+        </section>
+
+        <!-- 文件上传区域 -->
+        <section id="upload-section" class="max-w-3xl mx-auto mb-16">
+            <div class="bg-white rounded-2xl shadow-lg p-6 md:p-8 card-hover">
+                <!-- 切换按钮 -->
+                <div class="flex justify-center mb-8">
+                    <div class="bg-gray-100 rounded-lg p-1 flex">
+                        <button id="upload-tab" class="px-4 py-2 rounded-md font-medium transition-all bg-primary text-white shadow-sm">
+                            <i class="fa-solid fa-file-excel mr-2"></i>上传文件
+                        </button>
+                        <button id="manual-tab" class="px-4 py-2 rounded-md font-medium transition-all text-gray-600 hover:text-gray-800">
+                            <i class="fa-solid fa-keyboard mr-2"></i>手动输入
+                        </button>
+                    </div>
+                </div>
+
+                <!-- 上传文件区域 -->
+                <div id="upload-area">
+                    <div class="text-center mb-8">
+                        <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fa-solid fa-file-excel text-primary text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-2">上传Excel文件</h3>
+                        <p class="text-gray-500">支持.xlsx和.xls格式，确保文件包含姓名列</p>
+                    </div>
+                    
+                    <div class="border-2 border-dashed border-gray-300 rounded-xl p-8 text-center hover:border-primary transition-colors cursor-pointer" id="drop-area">
+                        <input type="file" id="file-input" accept=".xlsx,.xls" class="hidden">
+                        <button type="button" id="file-select-btn" class="bg-primary hover:bg-primary/90 text-white font-medium py-3 px-6 rounded-lg transition-all shadow-md hover:shadow-lg transform hover:-translate-y-0.5">
+                            <i class="fa-solid fa-upload mr-2"></i>选择文件
+                        </button>
+                        <p class="mt-4 text-gray-500">或者拖放文件到此处</p>
+                        <div class="mt-4 text-sm text-gray-400">
+                            <i class="fa-solid fa-info-circle mr-1"></i>最大文件大小: 10MB
+                        </div>
+                    </div>
+                    
+                    <div id="file-info" class="mt-6 hidden">
+                        <div class="bg-gray-50 rounded-lg p-4 flex items-center justify-between">
+                            <div class="flex items-center">
+                                <i class="fa-solid fa-file-excel text-primary mr-3"></i>
+                                <div>
+                                    <p id="file-name" class="font-medium"></p>
+                                    <p id="file-size" class="text-sm text-gray-500"></p>
+                                </div>
+                            </div>
+                            <button id="remove-file" class="text-gray-400 hover:text-red-500">
+                                <i class="fa-solid fa-times-circle"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 手动输入区域 -->
+                <div id="manual-area" class="hidden">
+                    <div class="text-center mb-8">
+                        <div class="w-16 h-16 bg-secondary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fa-solid fa-keyboard text-secondary text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-2">手动输入姓名</h3>
+                        <p class="text-gray-500">输入多个姓名，用逗号、分号、空格或换行分隔</p>
+                    </div>
+                    
+                    <div class="space-y-4">
+                        <div>
+                            <label for="names-input" class="block text-sm font-medium text-gray-700 mb-2">姓名列表</label>
+                            <textarea 
+                                id="names-input" 
+                                rows="8" 
+                                class="block w-full px-3 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary resize-none"
+                                placeholder="请输入姓名，支持以下分隔方式：&#10;张三,李四,王五&#10;张三;李四;王五&#10;张三 李四 王五&#10;张三&#10;李四&#10;王五"
+                            ></textarea>
+                        </div>
+                        
+                        <div class="flex items-center justify-between">
+                            <div class="text-sm text-gray-500">
+                                <i class="fa-solid fa-info-circle mr-1"></i>
+                                已输入: <span id="manual-count">0</span> 个姓名
+                            </div>
+                            <div class="flex w-full justify-between items-center mt-2">
+                                <button id="clear-names" class="text-sm flex items-center px-4 py-2 rounded-lg bg-gray-100 hover:bg-red-100 text-gray-500 hover:text-red-500 transition-all">
+                                    <i class="fa-solid fa-trash mr-1"></i>清空
+                                </button>
+                                <button id="add-names" class="text-sm flex items-center px-4 py-2 rounded-lg bg-primary hover:bg-primary/90 text-white transition-all">
+                                    <i class="fa-solid fa-plus mr-1"></i>追加
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 列选择区域 -->
+        <section id="column-selection" class="max-w-3xl mx-auto mb-16 hidden">
+            <div class="bg-white rounded-2xl shadow-lg p-6 md:p-8">
+                <!-- 文件模式 -->
+                <div id="file-mode-selection">
+                    <h3 class="text-xl font-semibold mb-6 flex items-center">
+                        <i class="fa-solid fa-list-ul text-primary mr-2"></i>选择姓名列
+                    </h3>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+                        <div class="col-span-1">
+                            <label for="name-column" class="block text-sm font-medium text-gray-700 mb-2">姓名列</label>
+                            <div class="relative">
+                                <select id="name-column" class="block w-full pl-3 pr-10 py-3 text-base border-gray-300 focus:outline-none focus:ring-primary focus:border-primary sm:text-sm rounded-lg appearance-none bg-white">
+                                    <!-- 选项将通过JavaScript动态添加 -->
+                                </select>
+                                <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+                                    <i class="fa-solid fa-chevron-down text-xs"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 手动输入模式 -->
+                <div id="manual-mode-selection" class="hidden">
+                    <h3 class="text-xl font-semibold mb-6 flex items-center">
+                        <i class="fa-solid fa-users text-secondary mr-2"></i>确认姓名列表
+                    </h3>
+                    
+                    <div class="bg-gray-50 rounded-lg p-4 mb-6">
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="text-sm font-medium text-gray-700">姓名预览</span>
+                            <span class="text-sm text-gray-500">共 <span id="preview-count">0</span> 个姓名</span>
+                        </div>
+                        <div id="names-preview" class="text-sm text-gray-600 max-h-32 overflow-y-auto">
+                            <!-- 姓名预览将通过JavaScript动态添加 -->
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="flex justify-end">
+                    <button id="start-selection" class="bg-secondary hover:bg-secondary/90 text-white font-medium py-3 px-6 rounded-lg transition-all shadow-md hover:shadow-lg transform hover:-translate-y-0.5">
+                        <i class="fa-solid fa-play mr-2"></i>开始点名
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- 点名区域 -->
+        <section id="selection-area" class="max-w-4xl mx-auto mb-16 hidden">
+            <div class="bg-white rounded-2xl shadow-lg p-6 md:p-8">
+                <div class="flex justify-between items-center mb-8">
+                    <h3 class="text-xl font-semibold flex items-center">
+                        <i class="fa-solid fa-random text-primary mr-2"></i>随机点名
+                    </h3>
+                    <div class="flex space-x-2">
+                        <span id="total-count" class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm font-medium">
+                            总人数: <span id="total-number">0</span>
+                        </span>
+                        <span id="picked-count" class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm font-medium">
+                            已点: <span id="picked-number">0</span>
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="relative h-64 md:h-80 flex items-center justify-center bg-gradient-to-r from-primary/5 to-secondary/5 rounded-xl mb-8 overflow-hidden">
+                    <!-- 装饰元素 -->
+                    <div class="absolute -top-10 -right-10 w-40 h-40 bg-primary/5 rounded-full"></div>
+                    <div class="absolute -bottom-10 -left-10 w-40 h-40 bg-secondary/5 rounded-full"></div>
+                    
+                    <div id="name-display" class="text-center z-10">
+                        <p class="text-gray-500 mb-2 text-sm">准备开始</p>
+                        <div id="name-box" class="text-[clamp(2rem,5vw,3.5rem)] font-bold text-dark py-4 px-8 rounded-xl min-h-[120px] flex items-center justify-center">
+                            点击开始按钮
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="flex justify-center space-x-4">
+                    <button id="pick-name" class="bg-secondary hover:bg-secondary/90 text-white font-medium py-3 px-8 rounded-lg transition-all shadow-md hover:shadow-lg transform hover:-translate-y-0.5 text-lg">
+                        <i class="fa-solid fa-hand-pointer mr-2"></i>点名
+                    </button>
+                    <button id="back-to-upload" class="bg-gray-200 hover:bg-gray-300 text-gray-700 font-medium py-3 px-6 rounded-lg transition-all shadow-md hover:shadow-lg transform hover:-translate-y-0.5">
+                        <i class="fa-solid fa-arrow-left mr-2"></i>返回
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- 已点名列表 -->
+        <section id="history-section" class="max-w-4xl mx-auto hidden">
+            <div class="bg-white rounded-2xl shadow-lg p-6 md:p-8">
+                <div class="flex justify-between items-center mb-6">
+                    <h3 class="text-xl font-semibold flex items-center">
+                        <i class="fa-solid fa-history text-primary mr-2"></i>点名历史
+                    </h3>
+                    <button id="clear-history" class="text-sm text-gray-500 hover:text-red-500 flex items-center">
+                        <i class="fa-solid fa-trash mr-1"></i>清空历史
+                    </button>
+                </div>
+                
+                <div id="history-list" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3 max-h-60 overflow-y-auto p-2">
+                    <!-- 历史记录将通过JavaScript动态添加 -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 加载动画模态框 -->
+    <div id="loading-modal" class="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-50 hidden">
+        <div class="bg-white rounded-xl p-8 flex flex-col items-center">
+            <div class="w-16 h-16 border-4 border-primary border-t-transparent rounded-full animate-spin mb-4"></div>
+            <p id="loading-text" class="text-lg font-medium text-gray-800">处理中...</p>
+        </div>
+    </div>
+
+    <script>
+        // 全局变量
+        let excelData = null;
+        let nameColumn = null;
+        let names = [];
+        let pickedNames = [];
+        let isSelecting = false;
+        let selectionInterval = null;
+        let currentMode = 'upload'; // 'upload' 或 'manual'
+        
+        // DOM 元素
+        const fileInput = document.getElementById('file-input');
+        const fileSelectBtn = document.getElementById('file-select-btn');
+        const dropArea = document.getElementById('drop-area');
+        const fileInfo = document.getElementById('file-info');
+        const fileName = document.getElementById('file-name');
+        const fileSize = document.getElementById('file-size');
+        const removeFile = document.getElementById('remove-file');
+        const columnSelection = document.getElementById('column-selection');
+        const nameColumnSelect = document.getElementById('name-column');
+        const startSelection = document.getElementById('start-selection');
+        const selectionArea = document.getElementById('selection-area');
+        const nameDisplay = document.getElementById('name-display');
+        const nameBox = document.getElementById('name-box');
+        const pickName = document.getElementById('pick-name');
+        const backToUpload = document.getElementById('back-to-upload');
+        const totalCount = document.getElementById('total-number');
+        const pickedCount = document.getElementById('picked-number');
+        const historySection = document.getElementById('history-section');
+        const historyList = document.getElementById('history-list');
+        const clearHistory = document.getElementById('clear-history');
+        const loadingModal = document.getElementById('loading-modal');
+        const loadingText = document.getElementById('loading-text');
+        
+        // 新增的DOM元素
+        const uploadTab = document.getElementById('upload-tab');
+        const manualTab = document.getElementById('manual-tab');
+        const uploadArea = document.getElementById('upload-area');
+        const manualArea = document.getElementById('manual-area');
+        const namesInput = document.getElementById('names-input');
+        const manualCount = document.getElementById('manual-count');
+        const clearNames = document.getElementById('clear-names');
+        const fileModeSelection = document.getElementById('file-mode-selection');
+        const manualModeSelection = document.getElementById('manual-mode-selection');
+        const namesPreview = document.getElementById('names-preview');
+        const previewCount = document.getElementById('preview-count');
+        
+        // 页面加载完成后执行
+        document.addEventListener('DOMContentLoaded', () => {
+            // 恢复localStorage中的names
+            const savedNames = localStorage.getItem('classrollcall_names');
+            if (savedNames) {
+                try {
+                    names = JSON.parse(savedNames);
+                } catch (e) {
+                    names = [];
+                }
+            }
+            // 如果有names，自动切换到手动输入模式并显示预览
+            if (names.length > 0) {
+                switchToManualMode();
+                showManualPreview(names);
+                namesInput.value = '';
+                manualCount.textContent = names.length;
+            }
+
+            // 切换功能
+            uploadTab.addEventListener('click', () => switchToUploadMode());
+            manualTab.addEventListener('click', () => switchToManualMode());
+            
+            // 手动输入相关事件
+            namesInput.addEventListener('input', updateManualCount);
+            clearNames.addEventListener('click', clearManualInput);
+            document.getElementById('add-names').addEventListener('click', addNames);
+            
+            // 文件选择按钮点击事件
+            fileSelectBtn.addEventListener('click', () => {
+                fileInput.click();
+            });
+            
+            // 文件选择事件
+            fileInput.addEventListener('change', handleFileSelect);
+            
+            // 拖放事件
+            ['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
+                dropArea.addEventListener(eventName, preventDefaults, false);
+            });
+            
+            function preventDefaults(e) {
+                e.preventDefault();
+                e.stopPropagation();
+            }
+            
+            ['dragenter', 'dragover'].forEach(eventName => {
+                dropArea.addEventListener(eventName, highlight, false);
+            });
+            
+            ['dragleave', 'drop'].forEach(eventName => {
+                dropArea.addEventListener(eventName, unhighlight, false);
+            });
+            
+            function highlight() {
+                dropArea.classList.add('border-primary');
+                dropArea.classList.add('bg-primary/5');
+            }
+            
+            function unhighlight() {
+                dropArea.classList.remove('border-primary');
+                dropArea.classList.remove('bg-primary/5');
+            }
+            
+            dropArea.addEventListener('drop', handleDrop, false);
+            
+            function handleDrop(e) {
+                const dt = e.dataTransfer;
+                const files = dt.files;
+                
+                if (files.length) {
+                    handleFiles(files);
+                }
+            }
+            
+            // 移除文件
+            removeFile.addEventListener('click', () => {
+                resetFileInput();
+            });
+            
+            // 开始点名
+            startSelection.addEventListener('click', () => {
+                if (currentMode === 'upload') {
+                    // 文件模式
+                    nameColumn = nameColumnSelect.value;
+                    if (!nameColumn) {
+                        showToast('请选择姓名列', 'error');
+                        return;
+                    }
+                    
+                    // 提取姓名列表
+                    names = excelData.map(row => row[nameColumn]).filter(name => name && name.trim() !== '');
+                    
+                    if (names.length === 0) {
+                        showToast('所选列中没有找到有效姓名', 'error');
+                        return;
+                    }
+                } else {
+                    // 手动输入模式
+                    names = parseManualInput();
+                    
+                    if (names.length === 0) {
+                        showToast('请输入至少一个姓名', 'error');
+                        return;
+                    }
+                }
+                
+                // 更新计数
+                totalCount.textContent = names.length;
+                pickedCount.textContent = pickedNames.length;
+                
+                // 隐藏输入区域和列选择区域
+                document.getElementById('upload-section').classList.add('hidden');
+                columnSelection.classList.add('hidden');
+                
+                // 显示点名区域
+                selectionArea.classList.remove('hidden');
+                historySection.classList.remove('hidden');
+                
+                // 更新历史记录
+                updateHistoryList();
+            });
+            
+            // 点名按钮
+            pickName.addEventListener('click', () => {
+                if (isSelecting) {
+                    stopSelection();
+                } else {
+                    // 检查是否所有名字都已被选中
+                    if (pickedNames.length >= names.length) {
+                        showToast('所有名字都已被选中！', 'info');
+                        pickedNames = [];
+                        pickedCount.textContent = '0';
+                        updateHistoryList();
+                        return;
+                    }
+                    
+                    startSelectionAnimation();
+                }
+            });
+            
+            // 返回上传页面
+            backToUpload.addEventListener('click', () => {
+                if (isSelecting) {
+                    stopSelection();
+                }
+                // 隐藏点名和历史区域
+                selectionArea.classList.add('hidden');
+                historySection.classList.add('hidden');
+                // 显示输入区域
+                document.getElementById('upload-section').classList.remove('hidden');
+                // 文件模式
+                if (currentMode === 'upload') {
+                    if (excelData !== null) {
+                        fileModeSelection.classList.remove('hidden');
+                        manualModeSelection.classList.add('hidden');
+                        columnSelection.classList.remove('hidden');
+                    } else {
+                        columnSelection.classList.add('hidden');
+                    }
+                } else {
+                    // 手动输入模式
+                    manualArea.classList.remove('hidden');
+                    if (names.length > 0) {
+                        showManualPreview(names);
+                    } else {
+                        columnSelection.classList.add('hidden');
+                    }
+                }
+            });
+            
+            // 清空历史记录
+            clearHistory.addEventListener('click', () => {
+                pickedNames = [];
+                pickedCount.textContent = '0';
+                updateHistoryList();
+            });
+            
+            // 滚动效果
+            window.addEventListener('scroll', () => {
+                // 由于没有导航栏，这里不需要处理滚动效果
+            });
+        });
+        
+        // 处理文件选择
+        function handleFileSelect(e) {
+            const files = e.target.files;
+            if (files.length) {
+                handleFiles(files);
+            }
+        }
+        
+        // 处理文件
+        function handleFiles(files) {
+            const file = files[0];
+            if (!file.name.match(/\.(xlsx|xls)$/i)) {
+                showToast('请上传Excel文件 (.xlsx 或 .xls)', 'error');
+                return;
+            }
+            
+            // 显示文件信息
+            fileName.textContent = file.name;
+            fileSize.textContent = formatFileSize(file.size);
+            fileInfo.classList.remove('hidden');
+            
+            // 处理Excel文件
+            showLoading('正在读取文件...');
+            const reader = new FileReader();
+            
+            reader.onload = function(e) {
+                try {
+                    const data = new Uint8Array(e.target.result);
+                    const workbook = XLSX.read(data, { type: 'array' });
+                    
+                    // 获取第一个工作表
+                    const firstSheetName = workbook.SheetNames[0];
+                    const worksheet = workbook.Sheets[firstSheetName];
+                    
+                    // 转换为JSON
+                    excelData = XLSX.utils.sheet_to_json(worksheet);
+                    
+                    if (excelData.length === 0) {
+                        throw new Error('Excel文件中没有数据');
+                    }
+                    
+                    // 获取列名
+                    const columnNames = Object.keys(excelData[0]);
+                    
+                    // 清空并添加列选项
+                    nameColumnSelect.innerHTML = '';
+                    columnNames.forEach(column => {
+                        const option = document.createElement('option');
+                        option.value = column;
+                        option.textContent = column;
+                        nameColumnSelect.appendChild(option);
+                    });
+                    
+                    // 显示列选择区域（文件模式）
+                    fileModeSelection.classList.remove('hidden');
+                    manualModeSelection.classList.add('hidden');
+                    columnSelection.classList.remove('hidden');
+                    hideLoading();
+                    
+                    // 保存到localStorage
+                    localStorage.setItem('classrollcall_names', JSON.stringify(names));
+                    
+                } catch (error) {
+                    hideLoading();
+                    showToast(`处理Excel文件时出错: ${error.message}`, 'error');
+                    resetFileInput();
+                }
+            };
+            
+            reader.onerror = function() {
+                hideLoading();
+                showToast('读取文件时发生错误', 'error');
+                resetFileInput();
+            };
+            
+            reader.readAsArrayBuffer(file);
+        }
+        
+        // 重置文件输入
+        function resetFileInput() {
+            fileInput.value = '';
+            fileInfo.classList.add('hidden');
+            columnSelection.classList.add('hidden');
+            selectionArea.classList.add('hidden');
+            historySection.classList.add('hidden');
+            excelData = null;
+            nameColumn = null;
+            names = [];
+            pickedNames = [];
+            localStorage.setItem('classrollcall_names', JSON.stringify(names));
+        }
+        
+        // 格式化文件大小
+        function formatFileSize(bytes) {
+            if (bytes === 0) return '0 Bytes';
+            const k = 1024;
+            const sizes = ['Bytes', 'KB', 'MB', 'GB'];
+            const i = Math.floor(Math.log(bytes) / Math.log(k));
+            return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + ' ' + sizes[i];
+        }
+        
+        // 开始选择动画
+        function startSelectionAnimation() {
+            isSelecting = true;
+            pickName.innerHTML = '<i class="fa-solid fa-stop mr-2"></i>停止';
+            nameDisplay.querySelector('p').textContent = '正在随机选择...';
+            nameBox.classList.remove('name-selected');
+            
+            // 过滤掉已经选中的名字
+            const availableNames = names.filter(name => !pickedNames.includes(name));
+            
+            // 快速切换名字
+            let counter = 0;
+            selectionInterval = setInterval(() => {
+                const randomIndex = Math.floor(Math.random() * availableNames.length);
+                nameBox.textContent = availableNames[randomIndex];
+                
+                // 动画效果
+                nameBox.classList.add('animate-pulse-slow');
+                
+                counter++;
+                if (counter > 10) {
+                    nameBox.classList.remove('animate-pulse-slow');
+                    counter = 0;
+                }
+            }, 100);
+        }
+        
+        // 停止选择并确定结果
+        function stopSelection() {
+            clearInterval(selectionInterval);
+            isSelecting = false;
+            pickName.innerHTML = '<i class="fa-solid fa-hand-pointer mr-2"></i>点名';
+            
+            // 过滤掉已经选中的名字
+            const availableNames = names.filter(name => !pickedNames.includes(name));
+            
+            if (availableNames.length === 0) {
+                nameBox.textContent = '所有名字都已被选中';
+                nameDisplay.querySelector('p').textContent = '已完成';
+                return;
+            }
+            
+            // 随机选择一个名字
+            const randomIndex = Math.floor(Math.random() * availableNames.length);
+            const selectedName = availableNames[randomIndex];
+            
+            // 添加到已选列表
+            pickedNames.push(selectedName);
+            
+            // 更新显示
+            nameBox.textContent = selectedName;
+            nameBox.classList.add('name-selected');
+            nameDisplay.querySelector('p').textContent = '已选中';
+            pickedCount.textContent = pickedNames.length;
+            
+            // 更新历史记录
+            updateHistoryList();
+            
+            // 播放动画
+            nameBox.animate([
+                { transform: 'scale(1)' },
+                { transform: 'scale(1.1)' },
+                { transform: 'scale(1)' }
+            ], {
+                duration: 500,
+                easing: 'ease-in-out'
+            });
+            
+            // 显示提示
+            showToast(`已选中: ${selectedName}`, 'success');
+        }
+        
+        // 更新历史记录列表
+        function updateHistoryList() {
+            historyList.innerHTML = '';
+            
+            if (pickedNames.length === 0) {
+                const emptyItem = document.createElement('div');
+                emptyItem.className = 'col-span-full text-center text-gray-400 py-4';
+                emptyItem.innerHTML = '<i class="fa-solid fa-history mr-2"></i>暂无点名记录';
+                historyList.appendChild(emptyItem);
+                return;
+            }
+            
+            pickedNames.forEach((name, index) => {
+                const historyItem = document.createElement('div');
+                historyItem.className = 'bg-gray-50 rounded-lg p-3 flex items-center justify-between shadow-sm hover:shadow transition-shadow';
+                historyItem.innerHTML = `
+                    <span class="font-medium">${name}</span>
+                    <span class="text-xs text-gray-400">${index + 1}</span>
+                `;
+                historyList.appendChild(historyItem);
+            });
+        }
+        
+        // 显示加载中
+        function showLoading(text = '处理中...') {
+            loadingText.textContent = text;
+            loadingModal.classList.remove('hidden');
+        }
+        
+        // 隐藏加载中
+        function hideLoading() {
+            loadingModal.classList.add('hidden');
+        }
+        
+        // 显示提示框
+        function showToast(message, type = 'info') {
+            // 创建toast元素
+            const toast = document.createElement('div');
+            
+            // 设置样式和内容
+            let bgColor, icon;
+            switch(type) {
+                case 'success':
+                    bgColor = 'bg-green-500';
+                    icon = 'fa-check-circle';
+                    break;
+                case 'error':
+                    bgColor = 'bg-red-500';
+                    icon = 'fa-exclamation-circle';
+                    break;
+                case 'warning':
+                    bgColor = 'bg-yellow-500';
+                    icon = 'fa-exclamation-triangle';
+                    break;
+                default:
+                    bgColor = 'bg-blue-500';
+                    icon = 'fa-info-circle';
+            }
+            
+            toast.className = `${bgColor} text-white px-4 py-3 rounded-lg shadow-lg flex items-center fixed top-4 right-4 z-50 transform transition-all duration-300 translate-x-full`;
+            toast.innerHTML = `
+                <i class="fa-solid ${icon} mr-2"></i>
+                <span>${message}</span>
+            `;
+            
+            // 添加到页面
+            document.body.appendChild(toast);
+            
+            // 显示动画
+            setTimeout(() => {
+                toast.classList.remove('translate-x-full');
+            }, 10);
+            
+            // 自动关闭
+            setTimeout(() => {
+                toast.classList.add('translate-x-full');
+                setTimeout(() => {
+                    document.body.removeChild(toast);
+                }, 300);
+            }, 3000);
+        }
+        
+        // 切换到上传模式
+        function switchToUploadMode() {
+            currentMode = 'upload';
+            
+            // 更新按钮样式
+            uploadTab.className = 'px-4 py-2 rounded-md font-medium transition-all bg-primary text-white shadow-sm';
+            manualTab.className = 'px-4 py-2 rounded-md font-medium transition-all text-gray-600 hover:text-gray-800';
+            
+            // 显示上传区域，隐藏手动输入区域
+            uploadArea.classList.remove('hidden');
+            manualArea.classList.add('hidden');
+            
+            // 重置手动输入
+            namesInput.value = '';
+            manualCount.textContent = '0';
+            
+            // 隐藏列选择区域
+            columnSelection.classList.add('hidden');
+        }
+        
+        // 切换到手动输入模式
+        function switchToManualMode() {
+            currentMode = 'manual';
+            
+            // 更新按钮样式
+            uploadTab.className = 'px-4 py-2 rounded-md font-medium transition-all text-gray-600 hover:text-gray-800';
+            manualTab.className = 'px-4 py-2 rounded-md font-medium transition-all bg-secondary text-white shadow-sm';
+            
+            // 显示手动输入区域，隐藏上传区域
+            uploadArea.classList.add('hidden');
+            manualArea.classList.remove('hidden');
+            
+            // 重置文件输入
+            resetFileInput();
+            
+            // 更新手动输入计数
+            updateManualCount();
+            
+            // 检查是否已有输入内容，如果有则显示预览
+            const inputText = namesInput.value.trim();
+            if (inputText) {
+                const parsedNames = parseManualInput();
+                names = parsedNames
+                if (parsedNames.length > 0) {
+                    showManualPreview(parsedNames);
+                }
+            }
+        }
+        
+        // 显示手动输入预览
+        function showManualPreview(names) {
+            // 显示手动模式的选择界面
+            fileModeSelection.classList.add('hidden');
+            manualModeSelection.classList.remove('hidden');
+            columnSelection.classList.remove('hidden');
+            
+            // 更新预览
+            updateNamesPreview(names);
+        }
+        
+        // 更新手动输入计数
+        function updateManualCount() {
+            const inputText = namesInput.value.trim();
+            if (!inputText) {
+                manualCount.textContent = '0';
+                // 如果当前在手动模式且列选择区域可见，隐藏预览
+                if (currentMode === 'manual' && !columnSelection.classList.contains('hidden')) {
+                    columnSelection.classList.add('hidden');
+                }
+                return;
+            }
+            
+            const parsedNames = parseManualInput();
+            manualCount.textContent = parsedNames.length;
+            
+            // 如果当前在手动模式，显示预览
+            if (currentMode === 'manual') {
+                if (parsedNames.length > 0) {
+                    showManualPreview(parsedNames);
+                } else {
+                    columnSelection.classList.add('hidden');
+                }
+            }
+        }
+        
+        // 解析手动输入的姓名
+        function parseManualInput() {
+            const inputText = namesInput.value.trim();
+            if (!inputText) return [];
+            
+            // 支持多种分隔符：逗号、分号、空格、换行
+            const names = inputText
+                .split(/[,，;\s\n]+/) // 按逗号、分号、空格、换行分割
+                .map(name => name.trim()) // 去除首尾空格
+                .filter(name => name !== ''); // 过滤空字符串
+            
+            return names;
+        }
+        
+        // 清空手动输入
+        function clearManualInput() {
+            namesInput.value = '';
+            manualCount.textContent = '0';
+            // 隐藏预览区域
+            if (currentMode === 'manual') {
+                columnSelection.classList.add('hidden');
+            }
+            // 清空全局names并保存
+            names = [];
+            localStorage.setItem('classrollcall_names', JSON.stringify(names));
+        }
+        
+        // 更新姓名预览
+        function updateNamesPreview(names) {
+            previewCount.textContent = names.length;
+            
+            if (names.length === 0) {
+                namesPreview.innerHTML = '<span class="text-gray-400">暂无姓名</span>';
+                return;
+            }
+            
+            const previewHtml = names.slice(0, 10).map(name => 
+                `<span class="inline-block bg-white px-2 py-1 rounded mr-2 mb-1 text-xs">${name}</span>`
+            ).join('');
+            
+            if (names.length > 10) {
+                namesPreview.innerHTML = previewHtml + `<span class="text-gray-400 text-xs">... 还有 ${names.length - 10} 个</span>`;
+            } else {
+                namesPreview.innerHTML = previewHtml;
+            }
+        }
+        
+        // 追加姓名
+        function addNames() {
+            // 保存当前姓名列表
+            const currentNames = names.slice();
+            // 获取新输入的姓名
+            const newNames = parseManualInput();
+            if (newNames.length === 0) {
+                showToast('请先输入需要追加的姓名', 'warning');
+                return;
+            }
+            // 清空输入区域，准备接受新的输入
+            namesInput.value = '';
+            manualCount.textContent = '0';
+            // 追加新姓名（去重）
+            newNames.forEach(name => {
+                if (!currentNames.includes(name)) {
+                    currentNames.push(name);
+                }
+            });
+            // 更新姓名列表
+            names = currentNames;
+            // 保存到localStorage
+            localStorage.setItem('classrollcall_names', JSON.stringify(names));
+            // 更新预览区域
+            if (!columnSelection.classList.contains('hidden')) {
+                updateNamesPreview(names);
+                previewCount.textContent = names.length;
+            }
+            showToast(`成功追加 ${newNames.length} 个姓名`, 'success');
+        }
+    </script>
+</body>
+</html>
+    </div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="card-content"><div class="author-info-avatar"><img class="avatar-img" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://avatars.githubusercontent.com/u/52066949?v=4" onerror="this.onerror=null;this.src='/blog/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__description">记录代码和阅读心得</div></div></div><div class="card-widget anzhiyu-right-widget" id="card-wechat" onclick="null"><div id="flip-wrapper"><div id="flip-content"><div class="face" style="background: url(https://bu.dusays.com/2023/01/13/63c02edf44033.png) center center / 100% no-repeat"></div><div class="back face" style="background: url(https://bu.dusays.com/2023/05/13/645fa415e8694.png) center center / 100% no-repeat"></div></div></div></div><div class="sticky_layout"><div class="card-widget"><div class="card-tags"><div class="item-headline"></div><div class="card-tag-cloud"><a href="/blog/tags/%E5%8D%9A%E5%AE%A2/" style="font-size: 1.05rem;">博客<sup>1</sup></a><a href="/blog/tags/%E6%8E%92%E5%BA%8F/" style="font-size: 1.05rem;">排序<sup>1</sup></a><a href="/blog/tags/%E6%95%B0%E7%BB%84/" style="font-size: 1.05rem;">数组<sup>1</sup></a><a href="/blog/tags/%E6%AC%A2%E8%BF%8E/" style="font-size: 1.05rem;">欢迎<sup>1</sup></a><a href="/blog/tags/%E7%AE%97%E6%B3%95/" style="font-size: 1.05rem;">算法<sup>1</sup></a></div></div><hr/><div class="card-archives"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-archive"></i><span>归档</span></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/blog/archives/2025/06/"><span class="card-archive-list-date">六月 2025</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">1</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/blog/archives/2025/05/"><span class="card-archive-list-date">五月 2025</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">2</span><span>篇</span></div></a></li></ul></div><hr/><div class="card-webinfo"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-chart-line"></i><span>网站资讯</span></div><div class="webinfo"><div class="webinfo-item"><div class="webinfo-item-title"><i class="anzhiyufont anzhiyu-icon-file-lines"></i><div class="item-name">文章总数 :</div></div><div class="item-count">3</div></div><div class="webinfo-item"><div class="webinfo-item-title"><i class="anzhiyufont anzhiyu-icon-stopwatch"></i><div class="item-name">建站天数 :</div></div><div class="item-count" id="runtimeshow" data-publishDate="2021-03-31T16:00:00.000Z"><i class="anzhiyufont anzhiyu-icon-spinner anzhiyu-spin"></i></div></div><div class="webinfo-item"><div class="webinfo-item-title"><i class="anzhiyufont anzhiyu-icon-font"></i><div class="item-name">全站字数 :</div></div><div class="item-count">460</div></div><div class="webinfo-item"><div class="webinfo-item-title"><i class="anzhiyufont anzhiyu-icon-universal-access"></i><div class="item-name">总访客数 :</div></div><div class="item-count" id="busuanzi_value_site_uv"><i class="anzhiyufont anzhiyu-icon-spinner anzhiyu-spin"></i></div></div><div class="webinfo-item"><div class="webinfo-item-title"><i class="anzhiyufont anzhiyu-icon-square-poll-vertical"></i><div class="item-name">总访问量 :</div></div><div class="item-count" id="busuanzi_value_site_pv"><i class="anzhiyufont anzhiyu-icon-spinner anzhiyu-spin"></i></div></div></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"></div><div id="footer-bar"><div class="footer-bar-links"><div class="footer-bar-left"><div id="footer-bar-tips"><div class="copyright">&copy;2025 By <a class="footer-bar-link" href="/blog/" title="cheel" target="_blank">cheel</a></div></div><div id="footer-type-tips"></div></div><div class="footer-bar-right"><a class="footer-bar-link" target="_blank" rel="noopener" href="https://github.com/anzhiyu-c/hexo-theme-anzhiyu" title="主题">主题</a></div></div></div></footer></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="sidebar-site-data site-data is-center"><a href="/blog/archives/" title="archive"><div class="headline">文章</div><div class="length-num">3</div></a><a href="/blog/tags/" title="tag"><div class="headline">标签</div><div class="length-num">5</div></a><a href="/blog/categories/" title="category"><div class="headline">分类</div><div class="length-num">2</div></a></div><span class="sidebar-menu-item-title">功能</span><div class="sidebar-menu-item"><a class="darkmode_switchbutton menu-child" href="javascript:void(0);" title="显示模式"><i class="anzhiyufont anzhiyu-icon-circle-half-stroke"></i><span>显示模式</span></a></div><div class="back-menu-list-groups"><div class="back-menu-list-group"><div class="back-menu-list-title">网页</div><div class="back-menu-list"><a class="back-menu-item" target="_blank" rel="noopener" href="https://blog.anheyu.com/" title="博客"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/img/favicon.ico" alt="博客"/><span class="back-menu-item-text">博客</span></a></div></div><div class="back-menu-list-group"><div class="back-menu-list-title">项目</div><div class="back-menu-list"><a class="back-menu-item" target="_blank" rel="noopener" href="https://image.anheyu.com/" title="安知鱼图床"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://image.anheyu.com/favicon.ico" alt="安知鱼图床"/><span class="back-menu-item-text">安知鱼图床</span></a></div></div></div><span class="sidebar-menu-item-title">标签</span><div class="card-tags"><div class="item-headline"></div><div class="card-tag-cloud"><a href="/blog/tags/%E5%8D%9A%E5%AE%A2/" style="font-size: 0.88rem;">博客<sup>1</sup></a><a href="/blog/tags/%E6%8E%92%E5%BA%8F/" style="font-size: 0.88rem;">排序<sup>1</sup></a><a href="/blog/tags/%E6%95%B0%E7%BB%84/" style="font-size: 0.88rem;">数组<sup>1</sup></a><a href="/blog/tags/%E6%AC%A2%E8%BF%8E/" style="font-size: 0.88rem;">欢迎<sup>1</sup></a><a href="/blog/tags/%E7%AE%97%E6%B3%95/" style="font-size: 0.88rem;">算法<sup>1</sup></a></div></div><hr/></div></div><div id="rightside"><div id="rightside-config-hide"><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="anzhiyufont anzhiyu-icon-circle-half-stroke"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="anzhiyufont anzhiyu-icon-arrows-left-right"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="anzhiyufont anzhiyu-icon-gear"></i></button><button id="go-up" type="button" title="回到顶部"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i></button></div></div><div id="nav-music"><a id="nav-music-hoverTips" onclick="anzhiyu.musicToggle()" accesskey="m">播放音乐</a><div id="console-music-bg"></div><meting-js id="8152976493" server="netease" type="playlist" mutex="true" preload="none" theme="var(--anzhiyu-main)" data-lrctype="0" order="random" volume="0.7"></meting-js></div><div class="docsearch-wrap"><div id="docsearch" style="display:none"></div><link rel="stylesheet" href="https://cdn.cbd.int/@docsearch/css@3.5.2/dist/style.css"/><script src="https://cdn.cbd.int/@docsearch/js@3.5.2/dist/umd/index.js"></script><script>(() => {
+  docsearch(Object.assign({
+    appId: '',
+    apiKey: '',
+    indexName: '',
+    container: '#docsearch',
+  }, null))
+
+  const handleClick = () => {
+    document.querySelector('.DocSearch-Button').click()
+  }
+
+  const searchClickFn = () => {
+    anzhiyu.addEventListenerPjax(document.querySelector('#search-button > .search'), 'click', handleClick)
+  }
+
+  searchClickFn()
+  window.addEventListener('pjax:complete', searchClickFn)
+})()</script></div><div id="rightMenu"><div class="rightMenu-group rightMenu-small"><div class="rightMenu-item" id="menu-backward"><i class="anzhiyufont anzhiyu-icon-arrow-left"></i></div><div class="rightMenu-item" id="menu-forward"><i class="anzhiyufont anzhiyu-icon-arrow-right"></i></div><div class="rightMenu-item" id="menu-refresh"><i class="anzhiyufont anzhiyu-icon-arrow-rotate-right" style="font-size: 1rem;"></i></div><div class="rightMenu-item" id="menu-top"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i></div></div><div class="rightMenu-group rightMenu-line rightMenuPlugin"><div class="rightMenu-item" id="menu-copytext"><i class="anzhiyufont anzhiyu-icon-copy"></i><span>复制选中文本</span></div><div class="rightMenu-item" id="menu-pastetext"><i class="anzhiyufont anzhiyu-icon-paste"></i><span>粘贴文本</span></div><a class="rightMenu-item" id="menu-commenttext"><i class="anzhiyufont anzhiyu-icon-comment-medical"></i><span>引用到评论</span></a><div class="rightMenu-item" id="menu-newwindow"><i class="anzhiyufont anzhiyu-icon-window-restore"></i><span>新窗口打开</span></div><div class="rightMenu-item" id="menu-copylink"><i class="anzhiyufont anzhiyu-icon-link"></i><span>复制链接地址</span></div><div class="rightMenu-item" id="menu-copyimg"><i class="anzhiyufont anzhiyu-icon-images"></i><span>复制此图片</span></div><div class="rightMenu-item" id="menu-downloadimg"><i class="anzhiyufont anzhiyu-icon-download"></i><span>下载此图片</span></div><div class="rightMenu-item" id="menu-newwindowimg"><i class="anzhiyufont anzhiyu-icon-window-restore"></i><span>新窗口打开图片</span></div><div class="rightMenu-item" id="menu-search"><i class="anzhiyufont anzhiyu-icon-magnifying-glass"></i><span>站内搜索</span></div><div class="rightMenu-item" id="menu-searchBaidu"><i class="anzhiyufont anzhiyu-icon-magnifying-glass"></i><span>百度搜索</span></div><div class="rightMenu-item" id="menu-music-toggle"><i class="anzhiyufont anzhiyu-icon-play"></i><span>播放音乐</span></div><div class="rightMenu-item" id="menu-music-back"><i class="anzhiyufont anzhiyu-icon-backward"></i><span>切换到上一首</span></div><div class="rightMenu-item" id="menu-music-forward"><i class="anzhiyufont anzhiyu-icon-forward"></i><span>切换到下一首</span></div><div class="rightMenu-item" id="menu-music-playlist" onclick="window.open(&quot;https://y.qq.com/n/ryqq/playlist/8802438608&quot;, &quot;_blank&quot;);" style="display: none;"><i class="anzhiyufont anzhiyu-icon-radio"></i><span>查看所有歌曲</span></div><div class="rightMenu-item" id="menu-music-copyMusicName"><i class="anzhiyufont anzhiyu-icon-copy"></i><span>复制歌名</span></div></div><div class="rightMenu-group rightMenu-line rightMenuOther"><a class="rightMenu-item menu-link" id="menu-randomPost"><i class="anzhiyufont anzhiyu-icon-shuffle"></i><span>随便逛逛</span></a><a class="rightMenu-item menu-link" href="/categories/"><i class="anzhiyufont anzhiyu-icon-cube"></i><span>博客分类</span></a><a class="rightMenu-item menu-link" href="/tags/"><i class="anzhiyufont anzhiyu-icon-tags"></i><span>文章标签</span></a></div><div class="rightMenu-group rightMenu-line rightMenuOther"><a class="rightMenu-item" id="menu-copy" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-copy"></i><span>复制地址</span></a><a class="rightMenu-item" id="menu-commentBarrage" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-message"></i><span class="menu-commentBarrage-text">关闭热评</span></a><a class="rightMenu-item" id="menu-darkmode" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-circle-half-stroke"></i><span class="menu-darkmode-text">深色模式</span></a><a class="rightMenu-item" id="menu-translate" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-language"></i><span>轉為繁體</span></a></div></div><div id="rightmenu-mask"></div><div><script src="/blog/js/utils.js"></script><script src="/blog/js/main.js"></script><script src="/blog/js/tw_cn.js"></script><script src="https://cdn.cbd.int/@fancyapps/ui@5.0.28/dist/fancybox/fancybox.umd.js"></script><script src="https://cdn.cbd.int/instant.page@5.2.0/instantpage.js" type="module"></script><script src="https://cdn.cbd.int/vanilla-lazyload@17.8.5/dist/lazyload.iife.min.js"></script><script src="https://cdn.cbd.int/node-snackbar@0.1.16/dist/snackbar.min.js"></script><canvas id="universe"></canvas><script async src="https://npm.elemecdn.com/anzhiyu-theme-static@1.0.0/dark/dark.js"></script><script>// 消除控制台打印
+var HoldLog = console.log;
+console.log = function () {};
+let now1 = new Date();
+queueMicrotask(() => {
+  const Log = function () {
+    HoldLog.apply(console, arguments);
+  }; //在恢复前输出日志
+  const grt = new Date("05/01/2025 00:00:00"); //此处修改你的建站时间或者网站上线时间
+  now1.setTime(now1.getTime() + 250);
+  const days = (now1 - grt) / 1000 / 60 / 60 / 24;
+  const dnum = Math.floor(days);
+  const ascll = [
+    `欢迎使用安知鱼!`,
+    `生活明朗, 万物可爱`,
+    `
+        
+       █████╗ ███╗   ██╗███████╗██╗  ██╗██╗██╗   ██╗██╗   ██╗
+      ██╔══██╗████╗  ██║╚══███╔╝██║  ██║██║╚██╗ ██╔╝██║   ██║
+      ███████║██╔██╗ ██║  ███╔╝ ███████║██║ ╚████╔╝ ██║   ██║
+      ██╔══██║██║╚██╗██║ ███╔╝  ██╔══██║██║  ╚██╔╝  ██║   ██║
+      ██║  ██║██║ ╚████║███████╗██║  ██║██║   ██║   ╚██████╔╝
+      ╚═╝  ╚═╝╚═╝  ╚═══╝╚══════╝╚═╝  ╚═╝╚═╝   ╚═╝    ╚═════╝
+        
+        `,
+    "已上线",
+    dnum,
+    "天",
+    "©2025 By 安知鱼 V1.6.14",
+  ];
+  const ascll2 = [`NCC2-036`, `调用前置摄像头拍照成功，识别为【小笨蛋】.`, `Photo captured: `, `🤪`];
+
+  setTimeout(
+    Log.bind(
+      console,
+      `\n%c${ascll[0]} %c ${ascll[1]} %c ${ascll[2]} %c${ascll[3]}%c ${ascll[4]}%c ${ascll[5]}\n\n%c ${ascll[6]}\n`,
+      "color:#425AEF",
+      "",
+      "color:#425AEF",
+      "color:#425AEF",
+      "",
+      "color:#425AEF",
+      ""
+    )
+  );
+  setTimeout(
+    Log.bind(
+      console,
+      `%c ${ascll2[0]} %c ${ascll2[1]} %c \n${ascll2[2]} %c\n${ascll2[3]}\n`,
+      "color:white; background-color:#4fd953",
+      "",
+      "",
+      'background:url("https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/tinggge.gif") no-repeat;font-size:450%'
+    )
+  );
+
+  setTimeout(Log.bind(console, "%c WELCOME %c 你好，小笨蛋.", "color:white; background-color:#4f90d9", ""));
+
+  setTimeout(
+    console.warn.bind(
+      console,
+      "%c ⚡ Powered by 安知鱼 %c 你正在访问 cheel 的博客.",
+      "color:white; background-color:#f0ad4e",
+      ""
+    )
+  );
+
+  setTimeout(Log.bind(console, "%c W23-12 %c 你已打开控制台.", "color:white; background-color:#4f90d9", ""));
+
+  setTimeout(
+    console.warn.bind(console, "%c S013-782 %c 你现在正处于监控中.", "color:white; background-color:#d9534f", "")
+  );
+});</script><script async src="/anzhiyu/random.js"></script><div class="js-pjax"><input type="hidden" name="page-type" id="page-type" value="anzhiyu"></div><script async data-pjax src="https://npm.elemecdn.com/anzhiyu-theme-static@1.0.1/bubble/bubble.js"></script><script>var visitorMail = "";
+</script><script async data-pjax src="https://cdn.cbd.int/anzhiyu-theme-static@1.0.0/waterfall/waterfall.js"></script><script src="https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/qrcodejs/1.0.0/qrcode.min.js"></script><link rel="stylesheet" href="https://cdn.cbd.int/anzhiyu-theme-static@1.1.9/icon/ali_iconfont_css.css"><script>(() => {
+  const isChatBtn = false
+  const isChatHideShow = false
+
+  if (isChatBtn) {
+    const close = () => {
+      Chatra('minimizeWidget')
+      Chatra('hide')
+    }
+
+    const open = () => {
+      Chatra('openChat', true)
+      Chatra('show')
+    }
+
+    window.ChatraSetup = {
+      startHidden: true
+    }
+  
+    window.chatBtnFn = () => {
+      const isShow = document.getElementById('chatra').classList.contains('chatra--expanded')
+      isShow ? close() : open()
+    }
+  } else if (isChatHideShow) {
+    window.chatBtn = {
+      hide: () => {
+        Chatra('hide')
+      },
+      show: () => {
+        Chatra('show')
+      }
+    }
+  }
+
+  (function(d, w, c) {
+    w.ChatraID = 'decjvSkt4ik7CFQ3g'
+    var s = d.createElement('script')
+    w[c] = w[c] || function() {
+        (w[c].q = w[c].q || []).push(arguments)
+    }
+    s.async = true
+    s.src = 'https://call.chatra.io/chatra.js'
+    if (d.head) d.head.appendChild(s)
+  })(document, window, 'Chatra')
+
+})()</script><link rel="stylesheet" href="https://cdn.cbd.int/anzhiyu-theme-static@1.0.0/aplayer/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://cdn.cbd.int/anzhiyu-blog-static@1.0.1/js/APlayer.min.js"></script><script src="https://cdn.cbd.int/hexo-anzhiyu-music@1.0.1/assets/js/Meting2.min.js"></script><script src="https://cdn.cbd.int/pjax@0.2.8/pjax.min.js"></script><script>let pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+  // removeEventListener scroll 
+  anzhiyu.removeGlobalFnEvent('pjax')
+  anzhiyu.removeGlobalFnEvent('themeChange')
+
+  document.getElementById('rightside').classList.remove('rightside-show')
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+})
+
+document.addEventListener('pjax:error', e => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/blog/404.html')
+  }
+})</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><script charset="UTF-8" src="https://cdn.cbd.int/anzhiyu-theme-static@1.1.5/accesskey/accesskey.js"></script></div><div id="popup-window"><div class="popup-window-title">通知</div><div class="popup-window-divider"></div><div class="popup-window-content"><div class="popup-tip">你好呀</div><div class="popup-link"><i class="anzhiyufont anzhiyu-icon-arrow-circle-right"></i></div></div></div></body></html>

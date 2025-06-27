@@ -1,0 +1,1144 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"><title>cheel blog | cheel blog</title><meta name="author" content="cheel"><meta name="copyright" content="cheel"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#f7f9fe"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-touch-fullscreen" content="yes"><meta name="apple-mobile-web-app-title" content="cheel blog"><meta name="application-name" content="cheel blog"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="#f7f9fe"><meta property="og:type" content="website"><meta property="og:title" content="cheel blog"><meta property="og:url" content="https://cheel.github.io/blog/mini/game/sudoku/index.html"><meta property="og:site_name" content="cheel blog"><meta property="og:description" content="数独游戏                        tailwind.config &amp;#x3D; {             theme: {                 extend: {                     colors: {"><meta property="og:locale" content="zh-CN"><meta property="og:image" content="https://avatars.githubusercontent.com/u/52066949?v=4"><meta property="article:author" content="cheel"><meta property="article:tag"><meta name="twitter:card" content="summary"><meta name="twitter:image" content="https://avatars.githubusercontent.com/u/52066949?v=4"><meta name="description" content="数独游戏                        tailwind.config &amp;#x3D; {             theme: {                 extend: {                     colors: {"><link rel="shortcut icon" href="/blog/favicon.ico"><link rel="canonical" href="https://cheel.github.io/blog/mini/game/sudoku/"><link rel="preconnect" href="//cdn.cbd.int"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><meta name="google-site-verification" content="xxx"/><meta name="baidu-site-verification" content="code-xxx"/><meta name="msvalidate.01" content="xxx"/><link rel="stylesheet" href="/blog/css/index.css"><link rel="stylesheet" href="https://cdn.cbd.int/node-snackbar@0.1.16/dist/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.cbd.int/@fancyapps/ui@5.0.28/dist/fancybox/fancybox.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  linkPageTop: undefined,
+  peoplecanvas: {"enable":true,"img":"https://upload-bbs.miyoushe.com/upload/2024/07/27/125766904/ba62475f396df9de3316a08ed9e65d86_5680958632268053399..png"},
+  postHeadAiDescription: {"enable":true,"gptName":"AnZhiYu","mode":"local","switchBtn":false,"btnLink":"https://afdian.net/item/886a79d4db6711eda42a52540025c377","randomNum":3,"basicWordCount":1000,"key":"xxxx","Referer":"https://xx.xx/"},
+  diytitle: undefined,
+  LA51: undefined,
+  greetingBox: undefined,
+  twikooEnvId: '',
+  commentBarrageConfig:undefined,
+  music_page_default: "nav_music",
+  root: '/blog/',
+  preloader: {"source":3},
+  friends_vue_info: {"apiurl":null},
+  navMusic: true,
+  mainTone: undefined,
+  authorStatus: undefined,
+  algolia: undefined,
+  localSearch: undefined,
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"简","rightMenuMsgToTraditionalChinese":"转为繁体","rightMenuMsgToSimplifiedChinese":"转为简体"},
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":330},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    simplehomepage: true,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"copy":true,"copyrightEbable":false,"limitCount":50,"languages":{"author":"作者: cheel","link":"链接: ","source":"来源: cheel blog","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。","copySuccess":"复制成功，复制和转载请标注本文地址"}},
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"你已切换为繁体","cht_to_chs":"你已切换为简体","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#425AEF","bgDark":"#1f1f1f","position":"top-center"},
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.cbd.int/flickr-justified-gallery@2.1.2/dist/fjGallery.min.js',
+      css: 'https://cdn.cbd.int/flickr-justified-gallery@2.1.2/dist/fjGallery.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isAnchor: false,
+  shortcutKey: undefined,
+  autoDarkmode: true
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  configTitle: 'cheel blog',
+  title: 'cheel blog',
+  postAI: '',
+  pageFillDescription: '数独游戏数独锻炼逻辑思维的经典数字游戏将数字填入空格使每行每列和每个小九宫格内均不重复游戏进度已用时完成度难度简单中等困难专家游戏说明点击单元格后使用数字键盘输入错误的数字会显示为红色点击清除按钮删除当前选中单元格的数字点击提示按钮获取一个正确数字新游戏提示显示答案数独棋盘清除检查再玩一次数独游戏锻炼逻辑思维的经典数字游戏游戏状态存储完整的数独解存储当前谜题用户看到的存储正确答案当前选中的单元格计时器已用时间秒游戏是否已开始初始化数独棋盘创建个单元格计算单元格样式处理网格的粗线网格分隔线单元格点击事件创建数字选择器选择单元格取消之前选中的单元格选择新单元格如果是预填的数字不允许选择高亮新选中的单元格高亮同行同列和同一个网格的单元格高亮相关单元格清除之前的高亮高亮同行同列和同一个网格的单元格同行同列同一个网格填充单元格如果单元格已经有数字不填充检查是否与答案一致检查游戏是否完成清除单元格如果是预填的数字不清除生成新的数独游戏停止之前的计时器重置游戏状态生成完整的数独解根据难度移除一些数字生成谜题渲染数独谜题开始计时隐藏结果弹窗生成完整的数独解使用回溯法生成数独解随机尝试数字检查数字是否可以放在指定位置检查行检查列检查网格随机打乱数组根据难度移除一些数字根据难度确定要移除的数字数量随机选择要移除的单元格移除选定的单元格渲染数独谜题重置选中单元格清除高亮开始计时器更新计时器显示检查游戏是否完成游戏完成更新完成度显示提示找到一个空单元格随机选择一个空单元格填入正确的数字选中这个单元格显示答案停止计时器检查答案跳过预填的单元格检查非空单元格如果没有错误检查是否完成显示结果弹窗恭喜你你完成了数独游戏用时分秒再试一次你的答案中包含错误请检查后继续显示弹窗并添加动画隐藏结果弹窗事件监听键盘事件监听数字键初始化游戏',
+  isPost: false,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: false,
+  postUpdate: '2025-06-26 09:13:28',
+  postMainColor: '',
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#18171d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#f7f9fe')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+          const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+          const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+          const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+          if (t === undefined) {
+            if (isLightMode) activateLightMode()
+            else if (isDarkMode) activateDarkMode()
+            else if (isNotSpecified || hasNoSupport) {
+              const now = new Date()
+              const hour = now.getHours()
+              const isNight = hour <= 6 || hour >= 18
+              isNight ? activateDarkMode() : activateLightMode()
+            }
+            window.matchMedia('(prefers-color-scheme: dark)').addListener(e => {
+              if (saveToLocal.get('theme') === undefined) {
+                e.matches ? activateDarkMode() : activateLightMode()
+              }
+            })
+          } else if (t === 'light') activateLightMode()
+          else activateDarkMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><meta name="generator" content="Hexo 7.3.0"></head><body data-type="anzhiyu"><div id="web_bg"></div><div id="an_music_bg"></div><div id="loading-box" onclick="document.getElementById(&quot;loading-box&quot;).classList.add(&quot;loaded&quot;)"><div class="loading-bg"><img class="loading-img nolazyload" alt="加载头像" src="https://npm.elemecdn.com/anzhiyu-blog-static@1.0.4/img/avatar.jpg"/><div class="loading-image-dot"></div></div></div><script>const preloader = {
+  endLoading: () => {
+    document.getElementById('loading-box').classList.add("loaded");
+  },
+  initLoading: () => {
+    document.getElementById('loading-box').classList.remove("loaded")
+  }
+}
+window.addEventListener('load',()=> { preloader.endLoading() })
+setTimeout(function(){preloader.endLoading();},10000)
+
+if (true) {
+  document.addEventListener('pjax:send', () => { preloader.initLoading() })
+  document.addEventListener('pjax:complete', () => { preloader.endLoading() })
+}</script><link rel="stylesheet" href="https://cdn.cbd.int/anzhiyu-theme-static@1.1.10/progress_bar/progress_bar.css"/><script async="async" src="https://cdn.cbd.int/pace-js@1.2.4/pace.min.js" data-pace-options="{ &quot;restartOnRequestAfter&quot;:false,&quot;eventLag&quot;:false}"></script><div class="page" id="body-wrap"><header class="not-top-img" id="page-header"><nav id="nav"><div id="nav-group"><span id="blog_name"><a id="site-name" href="/blog/" accesskey="h"><div class="title">cheel blog</div><i class="anzhiyufont anzhiyu-icon-house-chimney"></i></a></span><div class="mask-name-container"><div id="name-container"><a id="page-name" href="javascript:anzhiyu.scrollToDest(0, 500)">PAGE_NAME</a></div></div><div id="menus"></div><div id="nav-right"><div class="nav-button" id="randomPost_button"><a class="site-page" onclick="toRandomPost()" title="随机前往一个文章" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-dice"></i></a></div><div class="nav-button" id="search-button"><a class="site-page social-icon search" href="javascript:void(0);" title="搜索🔍" accesskey="s"><i class="anzhiyufont anzhiyu-icon-magnifying-glass"></i><span> 搜索</span></a></div><input id="center-console" type="checkbox"/><label class="widget" for="center-console" title="中控台" onclick="anzhiyu.switchConsole();"><i class="left"></i><i class="widget center"></i><i class="widget right"></i></label><div id="console"><div class="console-card-group-reward"><ul class="reward-all console-card"><li class="reward-item"><a href="https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/qrcode-weichat.png" target="_blank"><img class="post-qr-code-img" alt="微信" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/qrcode-weichat.png"/></a><div class="post-qr-code-desc">微信</div></li><li class="reward-item"><a href="https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/qrcode-alipay.png" target="_blank"><img class="post-qr-code-img" alt="支付宝" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/qrcode-alipay.png"/></a><div class="post-qr-code-desc">支付宝</div></li></ul></div><div class="console-card-group"><div class="console-card-group-left"><div class="console-card" id="card-newest-comments"><div class="card-content"><div class="author-content-item-tips">互动</div><span class="author-content-item-title"> 最新评论</span></div><div class="aside-list"><span>正在加载中...</span></div></div></div><div class="console-card-group-right"><div class="console-card tags"><div class="card-content"><div class="author-content-item-tips">兴趣点</div><span class="author-content-item-title">寻找你感兴趣的领域</span><div class="card-tags"><div class="item-headline"></div><div class="card-tag-cloud"><a href="/blog/tags/%E5%8D%9A%E5%AE%A2/" style="font-size: 1.05rem;">博客<sup>1</sup></a><a href="/blog/tags/%E6%8E%92%E5%BA%8F/" style="font-size: 1.05rem;">排序<sup>1</sup></a><a href="/blog/tags/%E6%95%B0%E7%BB%84/" style="font-size: 1.05rem;">数组<sup>1</sup></a><a href="/blog/tags/%E6%AC%A2%E8%BF%8E/" style="font-size: 1.05rem;">欢迎<sup>1</sup></a><a href="/blog/tags/%E7%AE%97%E6%B3%95/" style="font-size: 1.05rem;">算法<sup>1</sup></a></div></div><hr/></div></div><div class="console-card history"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-box-archiv"></i><span>文章</span></div><div class="card-archives"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-archive"></i><span>归档</span></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/blog/archives/2025/06/"><span class="card-archive-list-date">六月 2025</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">1</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/blog/archives/2025/05/"><span class="card-archive-list-date">五月 2025</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">2</span><span>篇</span></div></a></li></ul></div><hr/></div></div></div><div class="button-group"><div class="console-btn-item"><a class="darkmode_switchbutton" title="显示模式切换" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-moon"></i></a></div><div class="console-btn-item" id="consoleHideAside" onclick="anzhiyu.hideAsideBtn()" title="边栏显示控制"><a class="asideSwitch"><i class="anzhiyufont anzhiyu-icon-arrows-left-right"></i></a></div><div class="console-btn-item" id="consoleMusic" onclick="anzhiyu.musicToggle()" title="音乐开关"><a class="music-switch"><i class="anzhiyufont anzhiyu-icon-music"></i></a></div></div><div class="console-mask" onclick="anzhiyu.hideConsole()" href="javascript:void(0);"></div></div><div class="nav-button" id="nav-totop"><a class="totopbtn" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i><span id="percent" onclick="anzhiyu.scrollToDest(0,500)">0</span></a></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);" title="切换"><i class="anzhiyufont anzhiyu-icon-bars"></i></a></div></div></div></nav></header><main id="blog-container"><div class="layout" id="content-inner"><div id="page"><h1 class="page-title"></h1><div id="article-container"><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>数独游戏</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#3B82F6',
+                        secondary: '#10B981',
+                        accent: '#F59E0B',
+                        dark: '#1F2937',
+                        light: '#F3F4F6'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .content-auto {
+                content-visibility: auto;
+            }
+            .cell-border {
+                @apply border border-gray-300;
+            }
+            .cell-highlight {
+                @apply bg-blue-100 transition-colors duration-200;
+            }
+            .cell-selected {
+                @apply bg-blue-200 transition-colors duration-200;
+            }
+            .cell-error {
+                @apply bg-red-100 transition-colors duration-200;
+            }
+            .btn-hover {
+                @apply hover:shadow-lg transform hover:-translate-y-0.5 transition-all duration-200;
+            }
+            .grid-line {
+                @apply border-b-2 border-r-2 border-gray-600;
+            }
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-light to-gray-200 min-h-screen font-sans">
+    <div class="container mx-auto px-4 py-8 max-w-4xl">
+        <!-- 顶部标题区域 -->
+        <header class="text-center mb-8">
+            <h1 class="text-[clamp(2rem,5vw,3.5rem)] font-bold text-dark mb-2 tracking-tight">
+                <span class="text-primary">数</span><span class="text-accent">独</span>
+                <span class="text-[clamp(1rem,2vw,1.5rem)] font-normal text-gray-600 ml-2">Sudoku</span>
+            </h1>
+            <p class="text-gray-600 max-w-2xl mx-auto">锻炼逻辑思维的经典数字游戏，将数字1-9填入空格，使每行、每列和每个3x3小九宫格内均不重复。</p>
+        </header>
+
+        <!-- 游戏区域 -->
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+            <!-- 左侧：游戏信息 -->
+            <div class="lg:col-span-1 order-2 lg:order-1">
+                <div class="bg-white rounded-xl shadow-lg p-6 h-full flex flex-col">
+                    <div class="mb-6">
+                        <h2 class="text-xl font-bold text-dark mb-3 flex items-center">
+                            <i class="fa fa-trophy text-accent mr-2"></i>游戏进度
+                        </h2>
+                        <div class="grid grid-cols-2 gap-4 mb-4">
+                            <div class="bg-gray-50 rounded-lg p-4 text-center">
+                                <p class="text-sm text-gray-500 mb-1">已用时</p>
+                                <p id="timer" class="text-2xl font-bold text-primary">00:00</p>
+                            </div>
+                            <div class="bg-gray-50 rounded-lg p-4 text-center">
+                                <p class="text-sm text-gray-500 mb-1">完成度</p>
+                                <p id="progress" class="text-2xl font-bold text-secondary">0%</p>
+                            </div>
+                        </div>
+                        <div class="bg-gray-50 rounded-lg p-4">
+                            <p class="text-sm text-gray-500 mb-1">难度</p>
+                            <div class="flex items-center">
+                                <select id="difficulty" class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary/50">
+                                    <option value="easy">简单</option>
+                                    <option value="medium" selected>中等</option>
+                                    <option value="hard">困难</option>
+                                    <option value="expert">专家</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mb-6">
+                        <h2 class="text-xl font-bold text-dark mb-3 flex items-center">
+                            <i class="fa fa-info-circle text-primary mr-2"></i>游戏说明
+                        </h2>
+                        <ul class="text-gray-600 space-y-2 text-sm">
+                            <li class="flex items-start">
+                                <i class="fa fa-check-circle text-secondary mt-1 mr-2"></i>
+                                <span>点击单元格后，使用数字键盘输入1-9</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fa fa-check-circle text-secondary mt-1 mr-2"></i>
+                                <span>错误的数字会显示为红色</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fa fa-check-circle text-secondary mt-1 mr-2"></i>
+                                <span>点击"清除"按钮删除当前选中单元格的数字</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fa fa-check-circle text-secondary mt-1 mr-2"></i>
+                                <span>点击"提示"按钮获取一个正确数字</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="mt-auto">
+                        <div class="grid grid-cols-2 gap-3">
+                            <button id="new-game" class="bg-primary hover:bg-primary/90 text-white py-3 px-4 rounded-lg font-medium flex items-center justify-center btn-hover">
+                                <i class="fa fa-refresh mr-2"></i>新游戏
+                            </button>
+                            <button id="hint" class="bg-accent hover:bg-accent/90 text-white py-3 px-4 rounded-lg font-medium flex items-center justify-center btn-hover">
+                                <i class="fa fa-lightbulb-o mr-2"></i>提示
+                            </button>
+                        </div>
+                        <button id="solve" class="w-full mt-3 bg-secondary hover:bg-secondary/90 text-white py-3 px-4 rounded-lg font-medium flex items-center justify-center btn-hover">
+                            <i class="fa fa-magic mr-2"></i>显示答案
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 右侧：数独棋盘 -->
+            <div class="lg:col-span-2 order-1 lg:order-2">
+                <div class="bg-white rounded-xl shadow-lg p-6">
+                    <div class="flex justify-between items-center mb-4">
+                        <h2 class="text-xl font-bold text-dark flex items-center">
+                            <i class="fa fa-th text-primary mr-2"></i>数独棋盘
+                        </h2>
+                        <div class="flex space-x-2">
+                            <button id="clear" class="bg-gray-200 hover:bg-gray-300 text-gray-800 py-2 px-4 rounded-lg font-medium btn-hover">
+                                <i class="fa fa-eraser mr-1"></i>清除
+                            </button>
+                            <button id="check" class="bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded-lg font-medium btn-hover">
+                                <i class="fa fa-check mr-1"></i>检查
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- 数独棋盘 -->
+                    <div class="flex justify-center mb-6">
+                        <div id="sudoku-grid" class="grid grid-cols-9 grid-rows-9 border-2 border-gray-600 rounded-md overflow-hidden">
+                            <!-- 数独单元格将由JavaScript动态生成 -->
+                        </div>
+                    </div>
+
+                    <!-- 数字选择器 -->
+                    <div id="number-pad" class="grid grid-cols-9 gap-2 max-w-md mx-auto mb-2">
+                        <!-- 数字按钮将由JavaScript动态生成 -->
+                    </div>
+
+                    <!-- 游戏结果弹窗 -->
+                    <div id="result-modal" class="fixed inset-0 bg-black/50 flex items-center justify-center z-50 hidden opacity-0 transition-opacity duration-300">
+                        <div class="bg-white rounded-xl shadow-2xl p-8 max-w-md w-full mx-4 transform transition-transform duration-300 scale-95">
+                            <div class="text-center">
+                                <div id="result-icon" class="text-6xl mb-4"></div>
+                                <h2 id="result-title" class="text-2xl font-bold mb-2"></h2>
+                                <p id="result-message" class="text-gray-600 mb-6"></p>
+                                <button id="play-again" class="bg-primary hover:bg-primary/90 text-white py-3 px-8 rounded-lg font-medium btn-hover">
+                                    再玩一次
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 页脚 -->
+        <footer class="mt-12 text-center text-gray-500 text-sm">
+            <p>© 2025 数独游戏 | 锻炼逻辑思维的经典数字游戏</p>
+        </footer>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // 游戏状态
+            let board = []; // 存储完整的数独解
+            let puzzle = []; // 存储当前谜题（用户看到的）
+            let solution = []; // 存储正确答案
+            let selectedCell = null; // 当前选中的单元格
+            let timer = null; // 计时器
+            let timeElapsed = 0; // 已用时间（秒）
+            let gameStarted = false; // 游戏是否已开始
+
+            // 初始化数独棋盘
+            function initializeBoard() {
+                const grid = document.getElementById('sudoku-grid');
+                grid.innerHTML = '';
+                
+                // 创建81个单元格
+                for (let i = 0; i < 81; i++) {
+                    const row = Math.floor(i / 9);
+                    const col = i % 9;
+                    
+                    // 计算单元格样式（处理3x3网格的粗线）
+                    let cellClass = 'cell-border w-10 h-10 md:w-12 md:h-12 flex items-center justify-center text-lg md:text-xl font-medium';
+                    
+                    // 3x3网格分隔线
+                    if (row === 2 || row === 5) cellClass += ' border-b-2';
+                    if (col === 2 || col === 5) cellClass += ' border-r-2';
+                    
+                    const cell = document.createElement('div');
+                    cell.id = `cell-${row}-${col}`;
+                    cell.className = cellClass;
+                    cell.dataset.row = row;
+                    cell.dataset.col = col;
+                    
+                    // 单元格点击事件
+                    cell.addEventListener('click', () => selectCell(row, col));
+                    
+                    grid.appendChild(cell);
+                }
+                
+                // 创建数字选择器
+                const numberPad = document.getElementById('number-pad');
+                numberPad.innerHTML = '';
+                
+                for (let i = 1; i <= 9; i++) {
+                    const button = document.createElement('button');
+                    button.className = 'bg-gray-100 hover:bg-gray-200 text-gray-800 rounded-md h-10 flex items-center justify-center font-bold transition-colors duration-200';
+                    button.textContent = i;
+                    
+                    // 数字按钮点击事件
+                    button.addEventListener('click', () => {
+                        if (selectedCell) {
+                            const row = selectedCell.dataset.row;
+                            const col = selectedCell.dataset.col;
+                            fillCell(row, col, i);
+                        }
+                    });
+                    
+                    numberPad.appendChild(button);
+                }
+            }
+
+            // 选择单元格
+            function selectCell(row, col) {
+                // 取消之前选中的单元格
+                if (selectedCell) {
+                    selectedCell.classList.remove('cell-selected');
+                }
+                
+                // 选择新单元格
+                selectedCell = document.getElementById(`cell-${row}-${col}`);
+                
+                // 如果是预填的数字，不允许选择
+                if (selectedCell.classList.contains('text-gray-800')) {
+                    selectedCell = null;
+                    return;
+                }
+                
+                // 高亮新选中的单元格
+                if (selectedCell) {
+                    selectedCell.classList.add('cell-selected');
+                    
+                    // 高亮同行、同列和同一个3x3网格的单元格
+                    highlightRelatedCells(row, col);
+                }
+            }
+
+            // 高亮相关单元格
+            function highlightRelatedCells(row, col) {
+                // 清除之前的高亮
+                document.querySelectorAll('.cell-highlight').forEach(cell => {
+                    cell.classList.remove('cell-highlight');
+                });
+                
+                // 高亮同行、同列和同一个3x3网格的单元格
+                for (let i = 0; i < 9; i++) {
+                    // 同行
+                    const rowCell = document.getElementById(`cell-${row}-${i}`);
+                    if (rowCell !== selectedCell && !rowCell.classList.contains('text-gray-800')) {
+                        rowCell.classList.add('cell-highlight');
+                    }
+                    
+                    // 同列
+                    const colCell = document.getElementById(`cell-${i}-${col}`);
+                    if (colCell !== selectedCell && !colCell.classList.contains('text-gray-800')) {
+                        colCell.classList.add('cell-highlight');
+                    }
+                }
+                
+                // 同一个3x3网格
+                const startRow = Math.floor(row / 3) * 3;
+                const startCol = Math.floor(col / 3) * 3;
+                
+                for (let i = startRow; i < startRow + 3; i++) {
+                    for (let j = startCol; j < startCol + 3; j++) {
+                        const cell = document.getElementById(`cell-${i}-${j}`);
+                        if (cell !== selectedCell && !cell.classList.contains('text-gray-800')) {
+                            cell.classList.add('cell-highlight');
+                        }
+                    }
+                }
+            }
+
+            // 填充单元格
+            function fillCell(row, col, number) {
+                if (puzzle[row][col] !== 0) return; // 如果单元格已经有数字，不填充
+                
+                const cell = document.getElementById(`cell-${row}-${col}`);
+                cell.textContent = number;
+                cell.classList.add('text-primary');
+                
+                // 检查是否与答案一致
+                if (number === solution[row][col]) {
+                    cell.classList.remove('cell-error');
+                    puzzle[row][col] = number;
+                } else {
+                    // cell.classList.add('cell-error');
+                }
+                
+                // 检查游戏是否完成
+                checkGameCompletion();
+            }
+
+            // 清除单元格
+            function clearCell(row, col) {
+                const cell = document.getElementById(`cell-${row}-${col}`);
+                if (cell.classList.contains('text-gray-800')) return; // 如果是预填的数字，不清除
+                
+                cell.textContent = '';
+                cell.classList.remove('text-primary', 'cell-error');
+                puzzle[row][col] = 0;
+            }
+
+            // 生成新的数独游戏
+            function generateNewGame(difficulty = 'medium') {
+                // 停止之前的计时器
+                if (timer) {
+                    clearInterval(timer);
+                    timer = null;
+                }
+                
+                // 重置游戏状态
+                timeElapsed = 0;
+                document.getElementById('timer').textContent = '00:00';
+                document.getElementById('progress').textContent = '0%';
+                gameStarted = true;
+                
+                // 生成完整的数独解
+                solution = generateSolution();
+                board = JSON.parse(JSON.stringify(solution));
+                
+                // 根据难度移除一些数字生成谜题
+                puzzle = removeNumbers(board, difficulty);
+                
+                // 渲染数独谜题
+                renderPuzzle();
+                
+                // 开始计时
+                startTimer();
+                
+                // 隐藏结果弹窗
+                hideResultModal();
+            }
+
+            // 生成完整的数独解
+            function generateSolution() {
+                const solution = Array(9).fill().map(() => Array(9).fill(0));
+                
+                // 使用回溯法生成数独解
+                function backtrack(row, col) {
+                    if (row === 9) return true;
+                    
+                    const nextRow = col === 8 ? row + 1 : row;
+                    const nextCol = col === 8 ? 0 : col + 1;
+                    
+                    // 随机尝试数字1-9
+                    const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+                    shuffleArray(numbers);
+                    
+                    for (const num of numbers) {
+                        if (isValid(solution, row, col, num)) {
+                            solution[row][col] = num;
+                            
+                            if (backtrack(nextRow, nextCol)) {
+                                return true;
+                            }
+                            
+                            solution[row][col] = 0;
+                        }
+                    }
+                    
+                    return false;
+                }
+                
+                backtrack(0, 0);
+                return solution;
+            }
+
+            // 检查数字是否可以放在指定位置
+            function isValid(grid, row, col, num) {
+                // 检查行
+                for (let i = 0; i < 9; i++) {
+                    if (grid[row][i] === num) return false;
+                }
+                
+                // 检查列
+                for (let i = 0; i < 9; i++) {
+                    if (grid[i][col] === num) return false;
+                }
+                
+                // 检查3x3网格
+                const startRow = Math.floor(row / 3) * 3;
+                const startCol = Math.floor(col / 3) * 3;
+                
+                for (let i = startRow; i < startRow + 3; i++) {
+                    for (let j = startCol; j < startCol + 3; j++) {
+                        if (grid[i][j] === num) return false;
+                    }
+                }
+                
+                return true;
+            }
+
+            // 随机打乱数组
+            function shuffleArray(array) {
+                for (let i = array.length - 1; i > 0; i--) {
+                    const j = Math.floor(Math.random() * (i + 1));
+                    [array[i], array[j]] = [array[j], array[i]];
+                }
+            }
+
+            // 根据难度移除一些数字
+            function removeNumbers(board, difficulty) {
+                const puzzle = JSON.parse(JSON.stringify(board));
+                let cellsToRemove = 0;
+                
+                // 根据难度确定要移除的数字数量
+                switch(difficulty) {
+                    case 'easy':
+                        cellsToRemove = 30;
+                        break;
+                    case 'medium':
+                        cellsToRemove = 40;
+                        break;
+                    case 'hard':
+                        cellsToRemove = 50;
+                        break;
+                    case 'expert':
+                        cellsToRemove = 60;
+                        break;
+                    default:
+                        cellsToRemove = 40;
+                }
+                
+                // 随机选择要移除的单元格
+                const cells = [];
+                for (let i = 0; i < 81; i++) {
+                    cells.push(i);
+                }
+                shuffleArray(cells);
+                
+                // 移除选定的单元格
+                for (let i = 0; i < cellsToRemove; i++) {
+                    const cell = cells[i];
+                    const row = Math.floor(cell / 9);
+                    const col = cell % 9;
+                    puzzle[row][col] = 0;
+                }
+                
+                return puzzle;
+            }
+
+            // 渲染数独谜题
+            function renderPuzzle() {
+                for (let i = 0; i < 9; i++) {
+                    for (let j = 0; j < 9; j++) {
+                        const cell = document.getElementById(`cell-${i}-${j}`);
+                        
+                        if (puzzle[i][j] !== 0) {
+                            cell.textContent = puzzle[i][j];
+                            cell.classList.remove('text-primary');
+                            cell.classList.add('text-gray-800');
+                        } else {
+                            cell.textContent = '';
+                            cell.classList.remove('text-gray-800', 'text-primary', 'cell-error');
+                        }
+                    }
+                }
+                
+                // 重置选中单元格
+                if (selectedCell) {
+                    selectedCell.classList.remove('cell-selected');
+                    selectedCell = null;
+                }
+                
+                // 清除高亮
+                document.querySelectorAll('.cell-highlight').forEach(cell => {
+                    cell.classList.remove('cell-highlight');
+                });
+            }
+
+            // 开始计时器
+            function startTimer() {
+                if (timer) clearInterval(timer);
+                
+                timer = setInterval(() => {
+                    timeElapsed++;
+                    updateTimerDisplay();
+                }, 1000);
+            }
+
+            // 更新计时器显示
+            function updateTimerDisplay() {
+                const minutes = Math.floor(timeElapsed / 60).toString().padStart(2, '0');
+                const seconds = (timeElapsed % 60).toString().padStart(2, '0');
+                document.getElementById('timer').textContent = `${minutes}:${seconds}`;
+            }
+
+            // 检查游戏是否完成
+            function checkGameCompletion() {
+                for (let i = 0; i < 9; i++) {
+                    for (let j = 0; j < 9; j++) {
+                        if (puzzle[i][j] === 0 || puzzle[i][j] !== solution[i][j]) {
+                            updateProgress();
+                            return false;
+                        }
+                    }
+                }
+                
+                // 游戏完成
+                clearInterval(timer);
+                timer = null;
+                showResultModal(true);
+                return true;
+            }
+
+            // 更新完成度
+            function updateProgress() {
+                let filledCells = 0;
+                const totalCells = 81;
+                
+                for (let i = 0; i < 9; i++) {
+                    for (let j = 0; j < 9; j++) {
+                        if (puzzle[i][j] !== 0) {
+                            filledCells++;
+                        }
+                    }
+                }
+                
+                const progress = Math.round((filledCells / totalCells) * 100);
+                document.getElementById('progress').textContent = `${progress}%`;
+            }
+
+            // 显示提示
+            function showHint() {
+                if (!gameStarted) return;
+                let emptyCells = [];
+                // 找到一个空单元格
+                if (selectedCell) {
+                    emptyCells = [{row: selectedCell.dataset.row,col: selectedCell.dataset.col}]
+                }else{
+                    for (let i = 0; i < 9; i++) {
+                        for (let j = 0; j < 9; j++) {
+                            if (puzzle[i][j] === 0) {
+                                emptyCells.push({ row: i, col: j });
+                                break;
+                            }
+                        }
+                        if (emptyCells.length!==0) {
+                            break;
+                        }
+                    }
+                    if (emptyCells.length === 0) return;
+                }
+                
+                // 随机选择一个空单元格
+                const randomCell = emptyCells[Math.floor(Math.random() * emptyCells.length)];
+                const { row, col } = randomCell;
+                
+                // 填入正确的数字
+                fillCell(row, col, solution[row][col]);
+                
+                // 选中这个单元格
+                selectCell(row, col);
+            }
+
+            // 显示答案
+            function showSolution() {
+                if (!gameStarted) return;
+                
+                for (let i = 0; i < 9; i++) {
+                    for (let j = 0; j < 9; j++) {
+                        if (puzzle[i][j] === 0) {
+                            fillCell(i, j, solution[i][j]);
+                        }
+                    }
+                }
+                
+                // 停止计时器
+                clearInterval(timer);
+                timer = null;
+            }
+
+            // 检查答案
+            function checkSolution() {
+                if (!gameStarted) return;
+                
+                let hasError = false;
+                
+                for (let i = 0; i < 9; i++) {
+                    for (let j = 0; j < 9; j++) {
+                        const cell = document.getElementById(`cell-${i}-${j}`);
+                        
+                        // 跳过预填的单元格
+                        if (cell.classList.contains('text-gray-800')) continue;
+                        
+                        // 检查非空单元格
+                        if (puzzle[i][j] !== 0) {
+                            if (puzzle[i][j] !== solution[i][j]) {
+                                cell.classList.add('cell-error');
+                                hasError = true;
+                            } else {
+                                cell.classList.remove('cell-error');
+                            }
+                        }
+                    }
+                }
+                
+                // 如果没有错误，检查是否完成
+                if (!hasError && checkGameCompletion()) {
+                    showResultModal(true);
+                } else if (hasError) {
+                    showResultModal(false);
+                }
+            }
+
+            // 显示结果弹窗
+            function showResultModal(isSuccess) {
+                const modal = document.getElementById('result-modal');
+                const icon = document.getElementById('result-icon');
+                const title = document.getElementById('result-title');
+                const message = document.getElementById('result-message');
+                
+                if (isSuccess) {
+                    icon.className = 'fa fa-trophy text-6xl text-accent mb-4';
+                    title.textContent = '恭喜你！';
+                    title.className = 'text-2xl font-bold mb-2 text-secondary';
+                    message.textContent = `你完成了数独游戏，用时 ${Math.floor(timeElapsed / 60)} 分 ${timeElapsed % 60} 秒。`;
+                } else {
+                    icon.className = 'fa fa-times-circle text-6xl text-red-500 mb-4';
+                    title.textContent = '再试一次';
+                    title.className = 'text-2xl font-bold mb-2 text-red-600';
+                    message.textContent = '你的答案中包含错误，请检查后继续。';
+                }
+                
+                // 显示弹窗并添加动画
+                modal.classList.remove('hidden');
+                setTimeout(() => {
+                    modal.classList.add('opacity-100');
+                    modal.querySelector('div').classList.add('scale-100');
+                    modal.querySelector('div').classList.remove('scale-95');
+                }, 10);
+            }
+
+            // 隐藏结果弹窗
+            function hideResultModal() {
+                const modal = document.getElementById('result-modal');
+                modal.classList.remove('opacity-100');
+                modal.querySelector('div').classList.remove('scale-100');
+                modal.querySelector('div').classList.add('scale-95');
+                
+                setTimeout(() => {
+                    modal.classList.add('hidden');
+                }, 300);
+            }
+
+            // 事件监听
+            document.getElementById('new-game').addEventListener('click', () => {
+                const difficulty = document.getElementById('difficulty').value;
+                generateNewGame(difficulty);
+            });
+            
+            document.getElementById('hint').addEventListener('click', showHint);
+            document.getElementById('solve').addEventListener('click', showSolution);
+            document.getElementById('clear').addEventListener('click', () => {
+                if (selectedCell) {
+                    const row = selectedCell.dataset.row;
+                    const col = selectedCell.dataset.col;
+                    clearCell(row, col);
+                }
+            });
+            document.getElementById('check').addEventListener('click', checkSolution);
+            document.getElementById('play-again').addEventListener('click', () => {
+                const difficulty = document.getElementById('difficulty').value;
+                generateNewGame(difficulty);
+            });
+            
+            // 键盘事件监听
+            document.addEventListener('keydown', (e) => {
+                if (!selectedCell) return;
+                
+                const row = parseInt(selectedCell.dataset.row);
+                const col = parseInt(selectedCell.dataset.col);
+                
+                // 数字键1-9
+                if (e.key >= '1' && e.key <= '9') {
+                    fillCell(row, col, parseInt(e.key));
+                }
+                
+                // 删除键或退格键
+                if (e.key === 'Delete' || e.key === 'Backspace') {
+                    clearCell(row, col);
+                }
+                
+                // 方向键移动选中单元格
+                if (e.key === 'ArrowUp' && row > 0) {
+                    selectCell(row - 1, col);
+                } else if (e.key === 'ArrowDown' && row < 8) {
+                    selectCell(row + 1, col);
+                } else if (e.key === 'ArrowLeft' && col > 0) {
+                    selectCell(row, col - 1);
+                } else if (e.key === 'ArrowRight' && col < 8) {
+                    selectCell(row, col + 1);
+                }
+            });
+
+            // 初始化游戏
+            initializeBoard();
+            generateNewGame();
+        });
+    </script>
+</body>
+</html>
+    </div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="card-content"><div class="author-info-avatar"><img class="avatar-img" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://avatars.githubusercontent.com/u/52066949?v=4" onerror="this.onerror=null;this.src='/blog/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__description">记录代码和阅读心得</div></div></div><div class="card-widget anzhiyu-right-widget" id="card-wechat" onclick="null"><div id="flip-wrapper"><div id="flip-content"><div class="face" style="background: url(https://bu.dusays.com/2023/01/13/63c02edf44033.png) center center / 100% no-repeat"></div><div class="back face" style="background: url(https://bu.dusays.com/2023/05/13/645fa415e8694.png) center center / 100% no-repeat"></div></div></div></div><div class="sticky_layout"><div class="card-widget"><div class="card-tags"><div class="item-headline"></div><div class="card-tag-cloud"><a href="/blog/tags/%E5%8D%9A%E5%AE%A2/" style="font-size: 1.05rem;">博客<sup>1</sup></a><a href="/blog/tags/%E6%8E%92%E5%BA%8F/" style="font-size: 1.05rem;">排序<sup>1</sup></a><a href="/blog/tags/%E6%95%B0%E7%BB%84/" style="font-size: 1.05rem;">数组<sup>1</sup></a><a href="/blog/tags/%E6%AC%A2%E8%BF%8E/" style="font-size: 1.05rem;">欢迎<sup>1</sup></a><a href="/blog/tags/%E7%AE%97%E6%B3%95/" style="font-size: 1.05rem;">算法<sup>1</sup></a></div></div><hr/><div class="card-archives"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-archive"></i><span>归档</span></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/blog/archives/2025/06/"><span class="card-archive-list-date">六月 2025</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">1</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/blog/archives/2025/05/"><span class="card-archive-list-date">五月 2025</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">2</span><span>篇</span></div></a></li></ul></div><hr/><div class="card-webinfo"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-chart-line"></i><span>网站资讯</span></div><div class="webinfo"><div class="webinfo-item"><div class="webinfo-item-title"><i class="anzhiyufont anzhiyu-icon-file-lines"></i><div class="item-name">文章总数 :</div></div><div class="item-count">3</div></div><div class="webinfo-item"><div class="webinfo-item-title"><i class="anzhiyufont anzhiyu-icon-stopwatch"></i><div class="item-name">建站天数 :</div></div><div class="item-count" id="runtimeshow" data-publishDate="2021-03-31T16:00:00.000Z"><i class="anzhiyufont anzhiyu-icon-spinner anzhiyu-spin"></i></div></div><div class="webinfo-item"><div class="webinfo-item-title"><i class="anzhiyufont anzhiyu-icon-font"></i><div class="item-name">全站字数 :</div></div><div class="item-count">460</div></div><div class="webinfo-item"><div class="webinfo-item-title"><i class="anzhiyufont anzhiyu-icon-universal-access"></i><div class="item-name">总访客数 :</div></div><div class="item-count" id="busuanzi_value_site_uv"><i class="anzhiyufont anzhiyu-icon-spinner anzhiyu-spin"></i></div></div><div class="webinfo-item"><div class="webinfo-item-title"><i class="anzhiyufont anzhiyu-icon-square-poll-vertical"></i><div class="item-name">总访问量 :</div></div><div class="item-count" id="busuanzi_value_site_pv"><i class="anzhiyufont anzhiyu-icon-spinner anzhiyu-spin"></i></div></div></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"></div><div id="footer-bar"><div class="footer-bar-links"><div class="footer-bar-left"><div id="footer-bar-tips"><div class="copyright">&copy;2025 By <a class="footer-bar-link" href="/blog/" title="cheel" target="_blank">cheel</a></div></div><div id="footer-type-tips"></div></div><div class="footer-bar-right"><a class="footer-bar-link" target="_blank" rel="noopener" href="https://github.com/anzhiyu-c/hexo-theme-anzhiyu" title="主题">主题</a></div></div></div></footer></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="sidebar-site-data site-data is-center"><a href="/blog/archives/" title="archive"><div class="headline">文章</div><div class="length-num">3</div></a><a href="/blog/tags/" title="tag"><div class="headline">标签</div><div class="length-num">5</div></a><a href="/blog/categories/" title="category"><div class="headline">分类</div><div class="length-num">2</div></a></div><span class="sidebar-menu-item-title">功能</span><div class="sidebar-menu-item"><a class="darkmode_switchbutton menu-child" href="javascript:void(0);" title="显示模式"><i class="anzhiyufont anzhiyu-icon-circle-half-stroke"></i><span>显示模式</span></a></div><div class="back-menu-list-groups"><div class="back-menu-list-group"><div class="back-menu-list-title">网页</div><div class="back-menu-list"><a class="back-menu-item" target="_blank" rel="noopener" href="https://blog.anheyu.com/" title="博客"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/img/favicon.ico" alt="博客"/><span class="back-menu-item-text">博客</span></a></div></div><div class="back-menu-list-group"><div class="back-menu-list-title">项目</div><div class="back-menu-list"><a class="back-menu-item" target="_blank" rel="noopener" href="https://image.anheyu.com/" title="安知鱼图床"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://image.anheyu.com/favicon.ico" alt="安知鱼图床"/><span class="back-menu-item-text">安知鱼图床</span></a></div></div></div><span class="sidebar-menu-item-title">标签</span><div class="card-tags"><div class="item-headline"></div><div class="card-tag-cloud"><a href="/blog/tags/%E5%8D%9A%E5%AE%A2/" style="font-size: 0.88rem;">博客<sup>1</sup></a><a href="/blog/tags/%E6%8E%92%E5%BA%8F/" style="font-size: 0.88rem;">排序<sup>1</sup></a><a href="/blog/tags/%E6%95%B0%E7%BB%84/" style="font-size: 0.88rem;">数组<sup>1</sup></a><a href="/blog/tags/%E6%AC%A2%E8%BF%8E/" style="font-size: 0.88rem;">欢迎<sup>1</sup></a><a href="/blog/tags/%E7%AE%97%E6%B3%95/" style="font-size: 0.88rem;">算法<sup>1</sup></a></div></div><hr/></div></div><div id="rightside"><div id="rightside-config-hide"><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="anzhiyufont anzhiyu-icon-circle-half-stroke"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="anzhiyufont anzhiyu-icon-arrows-left-right"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="anzhiyufont anzhiyu-icon-gear"></i></button><button id="go-up" type="button" title="回到顶部"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i></button></div></div><div id="nav-music"><a id="nav-music-hoverTips" onclick="anzhiyu.musicToggle()" accesskey="m">播放音乐</a><div id="console-music-bg"></div><meting-js id="8152976493" server="netease" type="playlist" mutex="true" preload="none" theme="var(--anzhiyu-main)" data-lrctype="0" order="random" volume="0.7"></meting-js></div><div class="docsearch-wrap"><div id="docsearch" style="display:none"></div><link rel="stylesheet" href="https://cdn.cbd.int/@docsearch/css@3.5.2/dist/style.css"/><script src="https://cdn.cbd.int/@docsearch/js@3.5.2/dist/umd/index.js"></script><script>(() => {
+  docsearch(Object.assign({
+    appId: '',
+    apiKey: '',
+    indexName: '',
+    container: '#docsearch',
+  }, null))
+
+  const handleClick = () => {
+    document.querySelector('.DocSearch-Button').click()
+  }
+
+  const searchClickFn = () => {
+    anzhiyu.addEventListenerPjax(document.querySelector('#search-button > .search'), 'click', handleClick)
+  }
+
+  searchClickFn()
+  window.addEventListener('pjax:complete', searchClickFn)
+})()</script></div><div id="rightMenu"><div class="rightMenu-group rightMenu-small"><div class="rightMenu-item" id="menu-backward"><i class="anzhiyufont anzhiyu-icon-arrow-left"></i></div><div class="rightMenu-item" id="menu-forward"><i class="anzhiyufont anzhiyu-icon-arrow-right"></i></div><div class="rightMenu-item" id="menu-refresh"><i class="anzhiyufont anzhiyu-icon-arrow-rotate-right" style="font-size: 1rem;"></i></div><div class="rightMenu-item" id="menu-top"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i></div></div><div class="rightMenu-group rightMenu-line rightMenuPlugin"><div class="rightMenu-item" id="menu-copytext"><i class="anzhiyufont anzhiyu-icon-copy"></i><span>复制选中文本</span></div><div class="rightMenu-item" id="menu-pastetext"><i class="anzhiyufont anzhiyu-icon-paste"></i><span>粘贴文本</span></div><a class="rightMenu-item" id="menu-commenttext"><i class="anzhiyufont anzhiyu-icon-comment-medical"></i><span>引用到评论</span></a><div class="rightMenu-item" id="menu-newwindow"><i class="anzhiyufont anzhiyu-icon-window-restore"></i><span>新窗口打开</span></div><div class="rightMenu-item" id="menu-copylink"><i class="anzhiyufont anzhiyu-icon-link"></i><span>复制链接地址</span></div><div class="rightMenu-item" id="menu-copyimg"><i class="anzhiyufont anzhiyu-icon-images"></i><span>复制此图片</span></div><div class="rightMenu-item" id="menu-downloadimg"><i class="anzhiyufont anzhiyu-icon-download"></i><span>下载此图片</span></div><div class="rightMenu-item" id="menu-newwindowimg"><i class="anzhiyufont anzhiyu-icon-window-restore"></i><span>新窗口打开图片</span></div><div class="rightMenu-item" id="menu-search"><i class="anzhiyufont anzhiyu-icon-magnifying-glass"></i><span>站内搜索</span></div><div class="rightMenu-item" id="menu-searchBaidu"><i class="anzhiyufont anzhiyu-icon-magnifying-glass"></i><span>百度搜索</span></div><div class="rightMenu-item" id="menu-music-toggle"><i class="anzhiyufont anzhiyu-icon-play"></i><span>播放音乐</span></div><div class="rightMenu-item" id="menu-music-back"><i class="anzhiyufont anzhiyu-icon-backward"></i><span>切换到上一首</span></div><div class="rightMenu-item" id="menu-music-forward"><i class="anzhiyufont anzhiyu-icon-forward"></i><span>切换到下一首</span></div><div class="rightMenu-item" id="menu-music-playlist" onclick="window.open(&quot;https://y.qq.com/n/ryqq/playlist/8802438608&quot;, &quot;_blank&quot;);" style="display: none;"><i class="anzhiyufont anzhiyu-icon-radio"></i><span>查看所有歌曲</span></div><div class="rightMenu-item" id="menu-music-copyMusicName"><i class="anzhiyufont anzhiyu-icon-copy"></i><span>复制歌名</span></div></div><div class="rightMenu-group rightMenu-line rightMenuOther"><a class="rightMenu-item menu-link" id="menu-randomPost"><i class="anzhiyufont anzhiyu-icon-shuffle"></i><span>随便逛逛</span></a><a class="rightMenu-item menu-link" href="/categories/"><i class="anzhiyufont anzhiyu-icon-cube"></i><span>博客分类</span></a><a class="rightMenu-item menu-link" href="/tags/"><i class="anzhiyufont anzhiyu-icon-tags"></i><span>文章标签</span></a></div><div class="rightMenu-group rightMenu-line rightMenuOther"><a class="rightMenu-item" id="menu-copy" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-copy"></i><span>复制地址</span></a><a class="rightMenu-item" id="menu-commentBarrage" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-message"></i><span class="menu-commentBarrage-text">关闭热评</span></a><a class="rightMenu-item" id="menu-darkmode" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-circle-half-stroke"></i><span class="menu-darkmode-text">深色模式</span></a><a class="rightMenu-item" id="menu-translate" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-language"></i><span>轉為繁體</span></a></div></div><div id="rightmenu-mask"></div><div><script src="/blog/js/utils.js"></script><script src="/blog/js/main.js"></script><script src="/blog/js/tw_cn.js"></script><script src="https://cdn.cbd.int/@fancyapps/ui@5.0.28/dist/fancybox/fancybox.umd.js"></script><script src="https://cdn.cbd.int/instant.page@5.2.0/instantpage.js" type="module"></script><script src="https://cdn.cbd.int/vanilla-lazyload@17.8.5/dist/lazyload.iife.min.js"></script><script src="https://cdn.cbd.int/node-snackbar@0.1.16/dist/snackbar.min.js"></script><canvas id="universe"></canvas><script async src="https://npm.elemecdn.com/anzhiyu-theme-static@1.0.0/dark/dark.js"></script><script>// 消除控制台打印
+var HoldLog = console.log;
+console.log = function () {};
+let now1 = new Date();
+queueMicrotask(() => {
+  const Log = function () {
+    HoldLog.apply(console, arguments);
+  }; //在恢复前输出日志
+  const grt = new Date("05/01/2025 00:00:00"); //此处修改你的建站时间或者网站上线时间
+  now1.setTime(now1.getTime() + 250);
+  const days = (now1 - grt) / 1000 / 60 / 60 / 24;
+  const dnum = Math.floor(days);
+  const ascll = [
+    `欢迎使用安知鱼!`,
+    `生活明朗, 万物可爱`,
+    `
+        
+       █████╗ ███╗   ██╗███████╗██╗  ██╗██╗██╗   ██╗██╗   ██╗
+      ██╔══██╗████╗  ██║╚══███╔╝██║  ██║██║╚██╗ ██╔╝██║   ██║
+      ███████║██╔██╗ ██║  ███╔╝ ███████║██║ ╚████╔╝ ██║   ██║
+      ██╔══██║██║╚██╗██║ ███╔╝  ██╔══██║██║  ╚██╔╝  ██║   ██║
+      ██║  ██║██║ ╚████║███████╗██║  ██║██║   ██║   ╚██████╔╝
+      ╚═╝  ╚═╝╚═╝  ╚═══╝╚══════╝╚═╝  ╚═╝╚═╝   ╚═╝    ╚═════╝
+        
+        `,
+    "已上线",
+    dnum,
+    "天",
+    "©2025 By 安知鱼 V1.6.14",
+  ];
+  const ascll2 = [`NCC2-036`, `调用前置摄像头拍照成功，识别为【小笨蛋】.`, `Photo captured: `, `🤪`];
+
+  setTimeout(
+    Log.bind(
+      console,
+      `\n%c${ascll[0]} %c ${ascll[1]} %c ${ascll[2]} %c${ascll[3]}%c ${ascll[4]}%c ${ascll[5]}\n\n%c ${ascll[6]}\n`,
+      "color:#425AEF",
+      "",
+      "color:#425AEF",
+      "color:#425AEF",
+      "",
+      "color:#425AEF",
+      ""
+    )
+  );
+  setTimeout(
+    Log.bind(
+      console,
+      `%c ${ascll2[0]} %c ${ascll2[1]} %c \n${ascll2[2]} %c\n${ascll2[3]}\n`,
+      "color:white; background-color:#4fd953",
+      "",
+      "",
+      'background:url("https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/tinggge.gif") no-repeat;font-size:450%'
+    )
+  );
+
+  setTimeout(Log.bind(console, "%c WELCOME %c 你好，小笨蛋.", "color:white; background-color:#4f90d9", ""));
+
+  setTimeout(
+    console.warn.bind(
+      console,
+      "%c ⚡ Powered by 安知鱼 %c 你正在访问 cheel 的博客.",
+      "color:white; background-color:#f0ad4e",
+      ""
+    )
+  );
+
+  setTimeout(Log.bind(console, "%c W23-12 %c 你已打开控制台.", "color:white; background-color:#4f90d9", ""));
+
+  setTimeout(
+    console.warn.bind(console, "%c S013-782 %c 你现在正处于监控中.", "color:white; background-color:#d9534f", "")
+  );
+});</script><script async src="/anzhiyu/random.js"></script><div class="js-pjax"><input type="hidden" name="page-type" id="page-type" value="anzhiyu"></div><script async data-pjax src="https://npm.elemecdn.com/anzhiyu-theme-static@1.0.1/bubble/bubble.js"></script><script>var visitorMail = "";
+</script><script async data-pjax src="https://cdn.cbd.int/anzhiyu-theme-static@1.0.0/waterfall/waterfall.js"></script><script src="https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/qrcodejs/1.0.0/qrcode.min.js"></script><link rel="stylesheet" href="https://cdn.cbd.int/anzhiyu-theme-static@1.1.9/icon/ali_iconfont_css.css"><script>(() => {
+  const isChatBtn = false
+  const isChatHideShow = false
+
+  if (isChatBtn) {
+    const close = () => {
+      Chatra('minimizeWidget')
+      Chatra('hide')
+    }
+
+    const open = () => {
+      Chatra('openChat', true)
+      Chatra('show')
+    }
+
+    window.ChatraSetup = {
+      startHidden: true
+    }
+  
+    window.chatBtnFn = () => {
+      const isShow = document.getElementById('chatra').classList.contains('chatra--expanded')
+      isShow ? close() : open()
+    }
+  } else if (isChatHideShow) {
+    window.chatBtn = {
+      hide: () => {
+        Chatra('hide')
+      },
+      show: () => {
+        Chatra('show')
+      }
+    }
+  }
+
+  (function(d, w, c) {
+    w.ChatraID = 'decjvSkt4ik7CFQ3g'
+    var s = d.createElement('script')
+    w[c] = w[c] || function() {
+        (w[c].q = w[c].q || []).push(arguments)
+    }
+    s.async = true
+    s.src = 'https://call.chatra.io/chatra.js'
+    if (d.head) d.head.appendChild(s)
+  })(document, window, 'Chatra')
+
+})()</script><link rel="stylesheet" href="https://cdn.cbd.int/anzhiyu-theme-static@1.0.0/aplayer/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://cdn.cbd.int/anzhiyu-blog-static@1.0.1/js/APlayer.min.js"></script><script src="https://cdn.cbd.int/hexo-anzhiyu-music@1.0.1/assets/js/Meting2.min.js"></script><script src="https://cdn.cbd.int/pjax@0.2.8/pjax.min.js"></script><script>let pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+  // removeEventListener scroll 
+  anzhiyu.removeGlobalFnEvent('pjax')
+  anzhiyu.removeGlobalFnEvent('themeChange')
+
+  document.getElementById('rightside').classList.remove('rightside-show')
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+})
+
+document.addEventListener('pjax:error', e => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/blog/404.html')
+  }
+})</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><script charset="UTF-8" src="https://cdn.cbd.int/anzhiyu-theme-static@1.1.5/accesskey/accesskey.js"></script></div><div id="popup-window"><div class="popup-window-title">通知</div><div class="popup-window-divider"></div><div class="popup-window-content"><div class="popup-tip">你好呀</div><div class="popup-link"><i class="anzhiyufont anzhiyu-icon-arrow-circle-right"></i></div></div></div></body></html>
