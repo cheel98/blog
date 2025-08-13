@@ -141,3 +141,24 @@ robots:
     - /categories/
   sitemap:
     - /sitemap.xml
+admin:
+  # 管理页面的访问路径，默认是 /admin
+  path: /admin
+  
+  # 启用密码保护（推荐）
+  username: cheel98	
+  password_hash: 0d5c8efdd2577d0aff6765547039819d
+  secret: admin
+  
+  # 自动发布（保存时自动执行 hexo generate）
+  auto_publish: true
+  
+  # 自定义文章模板（新建文章时的默认内容）
+  default_article:
+    layout: post
+    title: 新文章
+    date: <%= date %>
+    tags:
+    - 标签1
+    categories:
+    - 分类1
