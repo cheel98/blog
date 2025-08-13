@@ -147,7 +147,7 @@ admin:
   
   # 启用密码保护（推荐）
   username: cheel98	
-  password_hash: 0d5c8efdd2577d0aff6765547039819d
+  password_hash: $2a$10$tncghxekaqMWuWRZeM.CB.7Z.te3C2CWn78wVclw7PeA0pkkaiPJa
   secret: admin
   
   # 自动发布（保存时自动执行 hexo generate）
