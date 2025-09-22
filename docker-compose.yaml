@@ -1,0 +1,13 @@
+version: "3.9"
+
+services:
+  hexo:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: hexo-server
+    ports:
+      - "4000:4000"   # 映射到宿主机
+    volumes:
+      - .:/app        # 挂载源码，便于本地修改后生效
+    command: npm run server
